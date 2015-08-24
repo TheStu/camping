@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Camping Smarts", root_url, class: 'navbar-brand'%>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gear Lists <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          	<% Category.all.each do |category| %>
+          		<li><%= link_to category.name, category_path(category) %></li>
+          	<% end %>
+          </ul>
+        </li>
+      </ul>
+      <% unless action_name == 'search' %>
+        <%= form_tag search_path, method: 'get', class: 'navbar-form navbar-left', role: 'search' do %>
+          <div class="form-group">
+            <%= text_field_tag :q, params[:q], { class: 'form-control', placeholder: 'Gear Search' } %>
+          </div>
+          <%= submit_tag "Search", name: nil, class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
+      <ul class="nav navbar-nav pull-left">
+        <li><%= link_to "Articles", pages_path %></li>
+        <li><%= link_to "Posts", posts_path %></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

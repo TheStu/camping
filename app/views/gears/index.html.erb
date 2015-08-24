@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gears</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Weight</th>
+      <th>Shape</th>
+      <th>Quilt</th>
+      <th>Min temp</th>
+      <th>Hood</th>
+      <th>Insulation</th>
+      <th>Season</th>
+      <th>Gear type</th>
+      <th>Capacity</th>
+      <th>Hip strap</th>
+      <th>Frame</th>
+      <th>Access</th>
+      <th>Length</th>
+      <th>Thickness</th>
+      <th>R value</th>
+      <th>Waterproof</th>
+      <th>Bug proof</th>
+      <th>Life time</th>
+      <th>Fixed length</th>
+      <th>Staff</th>
+      <th>Poncho</th>
+      <th>Gender</th>
+      <th>Material</th>
+      <th>Upper material</th>
+      <th>Deck material</th>
+      <th>Frame material</th>
+      <th>Heel lift</th>
+      <th>Max load</th>
+      <th>Canopy</th>
+      <th>Rainfly</th>
+      <th>Add warmth</th>
+      <th>Non-stick</th>
+      <th>Blade length</th>
+      <th>Multi-tool</th>
+      <th>Declination</th>
+      <th>Sighting mirror</th>
+      <th>Global needle</th>
+      <th>Red light</th>
+      <th>Max output</th>
+      <th>Max distance</th>
+      <th>Max battery</th>
+      <th>Rechargeable</th>
+      <th>Is api searchable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gears.each do |gear| %>
+      <tr>
+        <td><%= gear.category_id %></td>
+        <td><%= gear.name %></td>
+        <td><%= gear.weight %></td>
+        <td><%= gear.shape %></td>
+        <td><%= gear.quilt %></td>
+        <td><%= gear.min_temp %></td>
+        <td><%= gear.hood %></td>
+        <td><%= gear.insulation %></td>
+        <td><%= gear.season %></td>
+        <td><%= gear.gear_type %></td>
+        <td><%= gear.capacity %></td>
+        <td><%= gear.hip_strap %></td>
+        <td><%= gear.frame %></td>
+        <td><%= gear.access %></td>
+        <td><%= gear.length %></td>
+        <td><%= gear.thickness %></td>
+        <td><%= gear.r_value %></td>
+        <td><%= gear.waterproof %></td>
+        <td><%= gear.bug_proof %></td>
+        <td><%= gear.life_time %></td>
+        <td><%= gear.fixed_length %></td>
+        <td><%= gear.staff %></td>
+        <td><%= gear.poncho %></td>
+        <td><%= gear.gender %></td>
+        <td><%= gear.material %></td>
+        <td><%= gear.upper_material %></td>
+        <td><%= gear.deck_material %></td>
+        <td><%= gear.frame_material %></td>
+        <td><%= gear.heel_lift %></td>
+        <td><%= gear.max_load %></td>
+        <td><%= gear.canopy %></td>
+        <td><%= gear.rainfly %></td>
+        <td><%= gear.add_warmth %></td>
+        <td><%= gear.non_stick %></td>
+        <td><%= gear.blade_length %></td>
+        <td><%= gear.multi_tool %></td>
+        <td><%= gear.declination %></td>
+        <td><%= gear.sighting_mirror %></td>
+        <td><%= gear.global_needle %></td>
+        <td><%= gear.red_light %></td>
+        <td><%= gear.max_output %></td>
+        <td><%= gear.max_distance %></td>
+        <td><%= gear.max_battery %></td>
+        <td><%= gear.rechargeable %></td>
+        <td><%= gear.is_api_searchable %></td>
+        <td><%= link_to 'Show', gear %></td>
+        <td><%= link_to 'Edit', edit_gear_path(gear) %></td>
+        <td><%= link_to 'Destroy', gear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gear', new_gear_path %>

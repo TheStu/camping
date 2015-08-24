@@ -1,0 +1,197 @@
+<%= form_for(@gear) do |f| %>
+  <% if @gear.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gear.errors.count, "error") %> prohibited this gear from being saved:</h2>
+
+      <ul>
+      <% @gear.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :shape %><br>
+    <%= f.text_field :shape %>
+  </div>
+  <div class="field">
+    <%= f.label :quilt %><br>
+    <%= f.text_field :quilt %>
+  </div>
+  <div class="field">
+    <%= f.label :min_temp %><br>
+    <%= f.number_field :min_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :hood %><br>
+    <%= f.text_field :hood %>
+  </div>
+  <div class="field">
+    <%= f.label :insulation %><br>
+    <%= f.text_field :insulation %>
+  </div>
+  <div class="field">
+    <%= f.label :season %><br>
+    <%= f.text_field :season %>
+  </div>
+  <div class="field">
+    <%= f.label :gear_type %><br>
+    <%= f.text_field :gear_type %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :hip_strap %><br>
+    <%= f.text_field :hip_strap %>
+  </div>
+  <div class="field">
+    <%= f.label :frame %><br>
+    <%= f.text_field :frame %>
+  </div>
+  <div class="field">
+    <%= f.label :access %><br>
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :thickness %><br>
+    <%= f.number_field :thickness %>
+  </div>
+  <div class="field">
+    <%= f.label :r_value %><br>
+    <%= f.number_field :r_value %>
+  </div>
+  <div class="field">
+    <%= f.label :waterproof %><br>
+    <%= f.text_field :waterproof %>
+  </div>
+  <div class="field">
+    <%= f.label :bug_proof %><br>
+    <%= f.text_field :bug_proof %>
+  </div>
+  <div class="field">
+    <%= f.label :life_time %><br>
+    <%= f.number_field :life_time %>
+  </div>
+  <div class="field">
+    <%= f.label :fixed_length %><br>
+    <%= f.text_field :fixed_length %>
+  </div>
+  <div class="field">
+    <%= f.label :staff %><br>
+    <%= f.text_field :staff %>
+  </div>
+  <div class="field">
+    <%= f.label :poncho %><br>
+    <%= f.text_field :poncho %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :upper_material %><br>
+    <%= f.text_field :upper_material %>
+  </div>
+  <div class="field">
+    <%= f.label :deck_material %><br>
+    <%= f.text_field :deck_material %>
+  </div>
+  <div class="field">
+    <%= f.label :frame_material %><br>
+    <%= f.text_field :frame_material %>
+  </div>
+  <div class="field">
+    <%= f.label :heel_lift %><br>
+    <%= f.text_field :heel_lift %>
+  </div>
+  <div class="field">
+    <%= f.label :max_load %><br>
+    <%= f.number_field :max_load %>
+  </div>
+  <div class="field">
+    <%= f.label :canopy %><br>
+    <%= f.text_field :canopy %>
+  </div>
+  <div class="field">
+    <%= f.label :rainfly %><br>
+    <%= f.text_field :rainfly %>
+  </div>
+  <div class="field">
+    <%= f.label :add_warmth %><br>
+    <%= f.text_field :add_warmth %>
+  </div>
+  <div class="field">
+    <%= f.label :non_stick %><br>
+    <%= f.text_field :non_stick %>
+  </div>
+  <div class="field">
+    <%= f.label :blade_length %><br>
+    <%= f.number_field :blade_length %>
+  </div>
+  <div class="field">
+    <%= f.label :multi_tool %><br>
+    <%= f.text_field :multi_tool %>
+  </div>
+  <div class="field">
+    <%= f.label :declination %><br>
+    <%= f.text_field :declination %>
+  </div>
+  <div class="field">
+    <%= f.label :sighting_mirror %><br>
+    <%= f.text_field :sighting_mirror %>
+  </div>
+  <div class="field">
+    <%= f.label :global_needle %><br>
+    <%= f.text_field :global_needle %>
+  </div>
+  <div class="field">
+    <%= f.label :red_light %><br>
+    <%= f.text_field :red_light %>
+  </div>
+  <div class="field">
+    <%= f.label :max_output %><br>
+    <%= f.number_field :max_output %>
+  </div>
+  <div class="field">
+    <%= f.label :max_distance %><br>
+    <%= f.number_field :max_distance %>
+  </div>
+  <div class="field">
+    <%= f.label :max_battery %><br>
+    <%= f.number_field :max_battery %>
+  </div>
+  <div class="field">
+    <%= f.label :rechargeable %><br>
+    <%= f.text_field :rechargeable %>
+  </div>
+  <div class="field">
+    <%= f.label :is_api_searchable %><br>
+    <%= f.check_box :is_api_searchable %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

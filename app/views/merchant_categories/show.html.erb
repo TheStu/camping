@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @merchant_category.category_id %>
+</p>
+
+<p>
+  <strong>Merchant:</strong>
+  <%= @merchant_category.merchant_id %>
+</p>
+
+<p>
+  <strong>Matching product group:</strong>
+  <%= @merchant_category.matching_product_group_id %>
+</p>
+
+<%= link_to 'Edit', edit_merchant_category_path(@merchant_category) %> |
+<%= link_to 'Back', merchant_categories_path %>

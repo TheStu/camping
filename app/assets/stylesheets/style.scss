@@ -1,0 +1,251 @@
+.center {
+	text-align: center;
+}
+
+.Apple-style-span {
+	font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif !important;
+	line-height: 1.5 !important;
+	color: #333 !important;
+}
+
+#mc_embed_signup_scroll {
+	text-align: center;
+	.mc-field-group input {
+		padding: 6px 15px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    margin-bottom: 15px;
+	}
+}
+
+body {
+	letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+	height: 100%;
+	min-height: 100%;
+}
+
+.dropdown-menu li a {
+	font-size: 16px;
+	padding: 2px 20px;
+}
+
+.navbar .container-fluid {
+	background-image: url('classy_fabric.png');
+	background-color: #333;
+	background-color: rgba(51, 51, 51, 0.00);
+}
+
+@media (min-width: 768px) {
+	.navbar {
+  	border-radius: 0;
+	}
+}
+
+.navbar-form {
+	margin-top: 5.5px;
+	.form-group .form-control {
+		font-size: 16px;
+		height: 36px;
+	}
+	.btn {
+		font-size: 16px;
+		padding: 5px 12px;
+	}
+}
+
+.home-container {
+	height: 100%;
+	margin-top: -33px;
+	height: calc(100% - 52px);
+}
+
+.home-bg {
+  min-height: 100%;
+	background-image: url('home_bg.jpg');
+	background-size: cover;
+}
+
+.home-cats {
+	padding-top: 100px;
+	.home-cat {
+		margin: 15px;
+		display: inline-block;
+		a {
+			color: #9d9d9d;
+			text-decoration: none;
+			padding: 10px 30px;
+			background-color: rgba(black, 0.8);
+			border-radius: 5px;
+			&:hover, &:focus, &:active {
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+}
+
+.wp-title-container {
+	background-image: url('wp_bg.jpg');
+	margin-top: -33px;
+	background-size: cover;
+}
+
+.wp-title {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px;
+		color: white;
+	}
+	p {
+		margin-bottom: 5px;
+		color: white;
+	}
+	.wp-thumbs {
+		color: #777;
+		margin-bottom: 70px;
+		.glyphicon-thumbs-down {
+			margin-left: 15px;
+		}
+		.glyphicon {
+			vertical-align: text-top;
+		}
+	}
+}
+
+.wp-content {
+	margin-top: 40px;
+	.alignright {
+		float: right;
+	}
+	h2 {
+		font-size: 37px;
+	}
+	li {
+		margin: 10px 0;
+	}
+}
+
+#gear-list {
+	font-size: 15px;
+	.gear-list-weight-td:after {
+		content: " kg"
+	}
+}
+
+.list-h1 {
+	text-align: center;
+	h1 {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	p {
+		margin-bottom: 40px;
+	}
+}
+
+.index-h1 {
+	text-align: center;
+	h1 {
+		margin-top: 0;
+		margin-bottom: 35px;
+	}
+}
+
+.gear-h1 {
+	text-align: center;
+	h1 {
+		margin: 0;
+	}
+	.btn {
+		margin: 10px 0 35px;
+	}
+}
+
+.gear-table {
+	tr {
+		padding: 5px 0;
+		border-top: 1px solid #ddd;
+		.gear-table-attribute {
+			font-weight: bold;
+			padding-right: 30px;
+		}
+		td {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		&:first-child {
+			border-top: 0;
+		}
+	}
+}
+
+.gear-well-btn {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.search-title {
+	text-align: center;
+	h1 {
+		margin: 0 0;
+	}
+}
+
+#search-form {
+	margin: 10px 0 40px;
+	#q {
+		width: 50%;
+		padding: 6px 15px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    vertical-align: middle;
+	}
+}
+
+.result {
+	.picture-td {
+		padding-right: 10px;
+	}
+	.info-td {
+		line-height: 1;
+		padding-bottom: 40px;
+		.results-link {
+			line-height: 20px;
+		}
+		.results-categories {
+			font-size: 15px;
+			color: #999;
+		}
+		.results-desc {
+			line-height: 1.3;
+		}
+		.results-retail-price {
+			float: left;
+			margin: 0 20px 0 0;
+			color: red;
+			text-decoration: line-through;
+		}
+		.results-merch-name {
+			color: #999;
+			font-size: 15px;
+		}
+	}
+}
+
+.static-h1 {
+	text-align: center;
+	h1 {
+		margin-top: 0;
+	}
+}

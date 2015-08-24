@@ -1,0 +1,29 @@
+<%= form_for(@merchant_category) do |f| %>
+  <% if @merchant_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@merchant_category.errors.count, "error") %> prohibited this merchant_category from being saved:</h2>
+
+      <ul>
+      <% @merchant_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :merchant_id %><br>
+    <%= f.number_field :merchant_id %>
+  </div>
+  <div class="field">
+    <%= f.label :matching_product_group_id %><br>
+    <%= f.number_field :matching_product_group_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

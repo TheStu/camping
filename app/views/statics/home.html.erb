@@ -1,0 +1,11 @@
+<div class="container-fluid home-container">
+	<div class="row home-bg">
+		<div class="col-lg-10 col-lg-offset-1 center home-cats">
+			<% Category.all.each do |category| %>
+				<div class="home-cat">
+					<%= link_to "#{category.name} (#{category.gears.count})", category %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Merchant Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Merchant</th>
+      <th>Matching product group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merchant_categories.each do |merchant_category| %>
+      <tr>
+        <td><%= merchant_category.category_id %></td>
+        <td><%= merchant_category.merchant_id %></td>
+        <td><%= merchant_category.matching_product_group_id %></td>
+        <td><%= link_to 'Show', merchant_category %></td>
+        <td><%= link_to 'Edit', edit_merchant_category_path(merchant_category) %></td>
+        <td><%= link_to 'Destroy', merchant_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Merchant category', new_merchant_category_path %>
