@@ -1,5 +1,6 @@
 <% provide(:title, @page.meta_title) %>
 <% provide(:desc, @page.meta_desc) %>
+<% content_for :canonical, page_url(@page) %>
 
 <div itemscope itemtype="http://schema.org/BlogPosting">
 

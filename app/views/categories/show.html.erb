@@ -1,4 +1,5 @@
 <% provide(:title, "Compare #{@category.name}") %>
+<% content_for :canonical, category_url(@category) %>
 
 <div class="container-fluid">
 	<div class="row">
