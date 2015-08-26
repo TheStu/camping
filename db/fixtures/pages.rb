@@ -1009,7 +1009,7 @@ Here are a few sleeping pads with low R-values to consider.
 	<li><a href=\"http://www.rei.com/product/781096/therm-a-rest-neoair-sleeping-pad\" rel=\"nofollow\">Therm-A-Rest NeoAir Sleeping Pad</a> - The Therm-A-Rest NeoAir is an extremely popular sleeping pad, and with good reason. It has a sleeping pad R-value of 2.5, making it ideal for a variety of warmer temperatures, but weighs only 410 grams, or 14.5 ounces, which is an impressive weight saving over other sleeping pads with lower R-values. If you're looking for an inflatable warm weather sleeping pad that can do it all, the NeoAir is the obvious choice.</li>
 </ul>
 Compare even more sleeping pads by their R-values over at the <a href=\"http://www.tenpoundbackpack.com/gear-lists/sleeping-pads/\">Sleeping Pads List</a>."
-	p.title = "Sleeping Pad R-Values"
+	p.title = "Sleeping Pad R Values"
 	p.thumbs_up = 54
 	p.thumbs_down = 2
 	p.large_image_url = "2011/08/Sleeping-Pad-R-Values-300x300.jpg"
