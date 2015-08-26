@@ -1,6 +1,9 @@
 class MerchantCategoriesController < ApplicationController
   before_action :set_merchant_category, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+
   # GET /merchant_categories
   # GET /merchant_categories.json
   def index

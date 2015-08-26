@@ -138,6 +138,23 @@ html, body {
 	.gear-list-weight-td:after {
 		content: " kg"
 	}
+	.gear-list-temp-td:after {
+		content: " °F"
+	}
+	.gear-list-capacity-td:after {
+		content: " L"
+	}
+	.gear-list-life-td:after {
+		content: " Hours"
+	}
+}
+
+.fixedHeader {
+	font-size: 15px;
+}
+
+table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting {
+  background-image: none;
 }
 
 .list-h1 {
@@ -248,4 +265,100 @@ html, body {
 	h1 {
 		margin-top: 0;
 	}
+}
+
+.index-wrapper {
+  margin: 30px 0;
+  .index-pic {
+    border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    width: 340px;
+    height: 340px;
+    text-align: center;
+    line-height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    a {
+      display: block;
+      img {
+        max-width: 300px;
+        max-height: 300px;
+        padding: 20px;
+      }
+    }
+  }
+  .index-pic-small {
+    @extend .index-pic;
+    width: 120px;
+    height: 120px;
+    line-height: 100px;
+    a img {
+      max-width: 100px;
+      max-height: 100px;
+      padding: 10px;
+    }
+  }
+  .index-content {
+    width: 355px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0 0 -6px;
+    h3 {
+      padding-left: 10px;
+      padding-bottom: 5px;
+      margin-bottom: 0;
+      border-bottom: 1px solid #dfdfdf;
+      a:hover {
+        text-decoration: none;
+      }
+    }
+    .index-meta {
+      margin-bottom: 0;
+      border-bottom: 1px solid #dfdfdf;
+      padding: 3px 10px;
+      font-size: 13px;
+      color: #888;
+      i {
+        margin-right: 8px;
+      }
+    }
+    .index-text {
+      padding: 10px 0 0 10px;
+    }
+    .read-more-btn {
+      margin: 20px 0 0 20px;
+    }
+  }
+}
+
+.index-ul-wrapper {
+  clear: both;
+  .article-index-ul {
+    width: 270px;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+  }
+  .article-index-ads {
+    display: inline-block;
+    vertical-align: top;
+    .dotd-container {
+      display: inline-block;
+      float: right;
+      margin-left: 20px;
+      width: 170px;
+      .dotd-content {
+        width: 170px;
+      }
+    }
+  }
+}
+
+.post-paginate {
+	text-align: center;
+	.pagination {
+	  @extend .well;
+	  margin: 0;
+	  text-align: center;
+  }
 }

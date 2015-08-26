@@ -1,32 +1,31 @@
-task :confirm_sale_prices => :environment do
+task :send_newsletter => :environment do
 	
-	
-
 	gb = Gibbon::API.new
 
-	self.mailchimp_campaigns.each do |campaign|
-		response = gb.campaigns.create({
-			type: 'regular',
-			options: {
-				list_id: #,
-				subject: "Camping Gear Deals for #{Date.today.strftime('%A')}",
-				from_email: 'admin@tenpoundbackpack.com',
-				from_name: 'TenPoundBackpack',
-				title: "subscriber_newsletter_#{Date.today.strftime('%Y_%m_%d')}",
-				authenticate: true,
-				analytics: {
-					google: "subscriber_newsletter_#{Date.today.strftime('%Y_%m_%d')}"
-				}
-			},
-			content: {
-				html: generate_html_content
+	response = gb.campaigns.create({
+		type: 'regular',
+		options: {
+			list_id: '038630fc36',
+			subject: "Camping Gear Deals for #{Date.today.strftime('%A')}",
+			from_email: 'admin@tenpoundbackpack.com',
+			from_name: 'TenPoundBackpack',
+			title: "subscriber_newsletter_#{Date.today.strftime('%Y_%m_%d')}",
+			authenticate: true,
+			analytics: {
+				google: "subscriber_newsletter_#{Date.today.strftime('%Y_%m_%d')}"
 			}
-		})
-	end
+		},
+		content: {
+			html: generate_html_content
+		}
+	})
+
+	gb.campaigns.send({cid: response['id']})
+
 end
 
 def generate_html_content
-	
+
 	# rei = REI
 	# bc = BACKCOUNTRY
 	# pat = PATAGONIA
@@ -39,10 +38,12 @@ def generate_html_content
 	require 'nokogiri'
 	require 'open-uri'
 
+	include ActionView::Helpers::TextHelper
+
 	rei = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=16&affiliate_id=31645&merchant_id=10248&website_id=41369&custom_tracking_code=&output=xml"))
 	bc = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=6&affiliate_id=31645&merchant_id=10060&website_id=41369&custom_tracking_code=&output=xml"))
 	pat = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=33&affiliate_id=31645&merchant_id=10083&website_id=41369&custom_tracking_code=&output=xml"))
-	stp = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=569&affiliate_id=31645&merchant_id=10921&website_id=41369&custom_tracking_code=&output=xml"))
+	gx = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=141&affiliate_id=31645&merchant_id=10537&website_id=41369&custom_tracking_code=&output=xml"))
 	ems = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=237&affiliate_id=31645&merchant_id=10785&website_id=41369&custom_tracking_code=&output=xml"))
 	mg = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=513&affiliate_id=31645&merchant_id=11419&website_id=41369&custom_tracking_code=&output=xml"))
 	ll = Nokogiri::XML(open("https://classic.avantlink.com/api.php?module=DotdFeed&dotd_id=213&affiliate_id=31645&merchant_id=10965&website_id=41369&custom_tracking_code=&output=xml"))
@@ -730,7 +731,7 @@ def generate_html_content
                             <td class=\"mcnImageContent\" valign=\"top\" style=\"padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;\">
                                 
                                     
-                                        <img align=\"center\" alt=\"\" src=\"#{image_url('logo.png')}\" width=\"191\" style=\"max-width:191px; padding-bottom: 0; display: inline !important; vertical-align: bottom;\" class=\"mcnImage\">
+                                        <img align=\"center\" alt=\"\" src=\"https://gallery.mailchimp.com/c41f921ac1d23d7ddeb222cb0/images/4dee712b-4263-4114-b4ea-306d007d1a81.png\" width=\"191\" style=\"max-width:191px; padding-bottom: 0; display: inline !important; vertical-align: bottom;\" class=\"mcnImage\">
                                     
                                 
                             </td>
@@ -798,7 +799,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"text-align: center;\"><a href=\"#{rei.xpath('//Buy_URL').text}\" target=\"_blank\">#{rei.xpath('//Product_Name').text}</a></h3>
-#{rei.xpath('//Short_Description').text}
+#{truncate(rei.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{rei.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -837,7 +838,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{bc.xpath('//Buy_URL').text}\" target=\"_blank\">#{bc.xpath('//Product_Name').text}</a></h3>
-#{bc.xpath('//Short_Description').text}
+#{truncate(bc.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{bc.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -876,7 +877,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{pat.xpath('//Buy_URL').text}\" target=\"_blank\">#{pat.xpath('//Product_Name').text}</a></h3>
-#{pat.xpath('//Short_Description').text}
+#{truncate(pat.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{pat.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -904,22 +905,22 @@ def generate_html_content
         <td class=\"mcnCaptionBottomImageContent\" align=\"center\" valign=\"top\" style=\"padding:0 9px 9px 9px;\">
         
             
-            <a href=\"#{stp.xpath('//Buy_URL').text}\" title=\"\" class=\"\" target=\"_blank\">
+            <a href=\"#{gx.xpath('//Buy_URL').text}\" title=\"\" class=\"\" target=\"_blank\">
             
 
-            <img alt=\"\" src=\"#{stp.xpath('//Large_Image_URL').text}\" width=\"200\" style=\"max-width:200px;\" class=\"mcnImage\">
+            <img alt=\"\" src=\"#{gx.xpath('//Large_Image_URL').text}\" width=\"200\" style=\"max-width:200px;\" class=\"mcnImage\">
             </a>
         
         </td>
     </tr>
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
-            <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{stp.xpath('//Buy_URL').text}\" target=\"_blank\">#{stp.xpath('//Product_Name').text}</a></h3>
-#{stp.xpath('//Short_Description').text}
+            <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{gx.xpath('//Buy_URL').text}\" target=\"_blank\">#{gx.xpath('//Product_Name').text}</a></h3>
+#{truncate(gx.xpath('//Long_Description').text, length: 150)}
 
-<div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{stp.xpath('//Percent_Off').text}%</span></span></strong></div>
+<div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{gx.xpath('//Percent_Off').text}%</span></span></strong></div>
 
-<div style=\"text-align: center;\"><span style=\"color: #808080;font-size: 10px;line-height: 20.7999992370605px;text-align: center;\">from #{stp.xpath('//Merchant_Name').text}</span></div>
+<div style=\"text-align: center;\"><span style=\"color: #808080;font-size: 10px;line-height: 20.7999992370605px;text-align: center;\">from #{gx.xpath('//Merchant_Name').text}</span></div>
 
         </td>
     </tr>
@@ -961,7 +962,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{ems.xpath('//Buy_URL').text}\" target=\"_blank\">#{ems.xpath('//Product_Name').text}</a></h3>
-#{ems.xpath('//Short_Description').text}
+#{truncate(ems.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{ems.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -1000,7 +1001,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{mg.xpath('//Buy_URL').text}\" target=\"_blank\">#{mg.xpath('//Product_Name').text}</a></h3>
-#{mg.xpath('//Short_Description').text}
+#{truncate(mg.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{mg.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -1039,7 +1040,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{ll.xpath('//Buy_URL').text}\" target=\"_blank\">#{ll.xpath('//Product_Name').text}</a></h3>
-#{ll.xpath('//Short_Description').text}
+#{truncate(ll.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{ll.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -1078,7 +1079,7 @@ def generate_html_content
     <tr>
         <td class=\"mcnTextContent\" valign=\"top\" style=\"padding:0 9px 0 9px;\" width=\"264\">
             <h3 style=\"line-height: 20.7999992370605px; text-align: center;\"><a href=\"#{rc.xpath('//Buy_URL').text}\" target=\"_blank\">#{rc.xpath('//Product_Name').text}</a></h3>
-#{rc.xpath('//Short_Description').text}
+#{truncate(rc.xpath('//Long_Description').text, length: 150)}
 
 <div style=\"text-align: center; margin-top:5px\"><strong><span style=\"color:#FFFFFF\"><span style=\"background-color:#FF0000; padding:5px 10px\">-#{rc.xpath('//Percent_Off').text}%</span></span></strong></div>
 
@@ -1109,56 +1110,58 @@ def generate_html_content
                             </tr>
                             <tr>
                                 <td align=\"center\" valign=\"top\">
-                                    <!-- BEGIN FOOTER // -->
-                                    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"templateFooter\">
-                                        <tr>
-                                            <td align=\"center\" valign=\"top\">
-                                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" class=\"templateContainer\">
-                                                    <tr>
-                                                        <td valign=\"top\" class=\"footerContainer\" style=\"padding-top:10px; padding-bottom:10px;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnTextBlock\">
-    <tbody class=\"mcnTextBlockOuter\">
-        <tr>
-            <td valign=\"top\" class=\"mcnTextBlockInner\">
-                
-                <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" class=\"mcnTextContentContainer\">
-                    <tbody><tr>
-                        
-                        <td valign=\"top\" class=\"mcnTextContent\" style=\"padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;\">
-                        
-                            <em>Copyright © 2015, All rights reserved.</em><br>
-<br>
-<strong>Our mailing address is:</strong><br>
-TenPoundBackpack<br>
-2-2200 Heather St.<br>
-Vancouver, BC<br>
-V5Z 3H6<br>
-<br>
-Want to change how you receive these emails?<br>
-You can <a href=\"*|UPDATE_PROFILE|*\">update your preferences</a> or <a href=\"*|UNSUB|*\">unsubscribe from this list</a>
-                        </td>
-                    </tr>
-                </tbody></table>
-                
-            </td>
-        </tr>
-    </tbody>
-</table></td>
+                                                                        <!-- BEGIN FOOTER // -->
+                                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" id=\"templateFooter\">
+                                                                            <tr>
+                                                                                <td valign=\"top\" class=\"footerContainer\" style=\"padding-bottom:9px;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnTextBlock\">
+                                        <tbody class=\"mcnTextBlockOuter\">
+                                            <tr>
+                                                <td valign=\"top\" class=\"mcnTextBlockInner\">
+                                                    
+                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" class=\"mcnTextContentContainer\">
+                                                        <tbody><tr>
+                                                            
+                                                            <td valign=\"top\" class=\"mcnTextContent\" style=\"padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;\">
+                                                            
+                                                                <em>Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+                                    <br>
+                                    *|IFNOT:ARCHIVE_PAGE|*
+                                        *|LIST:DESCRIPTION|*
+                                        <br>
+                                        <br>
+                                        <strong>Our mailing address is:</strong>
+                                        <br>
+                                        *|HTML:LIST_ADDRESS_HTML|* *|END:IF|*
+                                        <br>
+                                        <br>
+                                    	Want to change how you receive these emails?<br>
+                                        You can <a href=\"*|UPDATE_PROFILE|*\">update your preferences</a> or <a href=\"*|UNSUB|*\">unsubscribe from this list</a>
+                                        <br>
+                                        <br>
+                                        *|IF:REWARDS|* *|HTML:REWARDS|*
+                                    *|END:IF|*
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                    
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- // END FOOTER -->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // END TEMPLATE -->
+                                                        </td>
                                                     </tr>
                                                 </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END FOOTER -->
-                                </td>
-                            </tr>
-                        </table>
-                        <!-- // END TEMPLATE -->
-                    </td>
-                </tr>
-            </table>
-        </center>
-    </body>
-</html>"
+                                            </center>
+                                        </body>
+                                    </html>
+"
 
 return email
 

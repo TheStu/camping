@@ -19,4 +19,15 @@ module ApplicationHelper
 	  end
 	end
 
+	def index_scrub(html) #sanitizer for search results snippets
+    Sanitize.clean(html, :elements => ['a', 'br', 'b', 'i', 'u', 'p', 'strong', 'em', 'strike'],
+                         :attributes => { 'a' => ['target', 'rel', 'href']},
+                         :protocols => {'a' => {'href' => ['http', 'https', 'mailto']}})
+  end
+
+  def old_content_scrub(html) #sanitizer for old posts and pages... same as above but removes images
+    Sanitize.clean(html, :elements => ['a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ol', 'ul', 'li', 'br', 'b', 'i', 'a', 'u', 'p', 'strong', 'em', 'blockquote', 'strike'],
+                         :attributes => { 'a' => ['target', 'rel', 'href']},
+                         :protocols => {'a' => {'href' => ['http', 'https', 'mailto']}})
+  end
 end

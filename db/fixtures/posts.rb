@@ -1,23 +1,4 @@
 Post.seed do |p|
-	p.id = 1157
-	p.content = "I've had a fair number of emails over the last couple of months about various manufacturers and products that I am missing from the gear lists.
-
-I've gone through them and added most of the various manufacturers that have been suggested to me by readers. I'm still missing a few, but I think that'll I'll always be missing a few.
-
-Overall I've <strong>added 100+ items</strong> to the lists. Most of the lists got at least a few new items. The bulk of the updates went to the sleeping bags, however, as I was missing a few big manufacturers there.
-
-As always, if you see anything that I'm missing, leave a comment or send me an email. I sorted out my update system, so hopefully I'll be able to add manufacturers and products faster, rather than doing big updates."
-	p.title = "Gear List Updates"
-	p.thumbs_up = 23
-	p.thumbs_down = 4
-	p.large_image_url = ""
-	p.thumb_image_url = ""
-	p.meta_title = "Gear List Updates"
-	p.meta_desc = ""
-	p.category = "Site News"
-end	
-
-Post.seed do |p|
 	p.id = 1442
 	p.content = "<a href=\"http://www.rei.com/product/802109/dajo-survivor-knife\"><img class=\"alignright size-medium wp-image-1445\" title=\"Backpacking Knives\" src=\"http://www.tenpoundbackpack.com/wp-content/uploads/2011/11/Backpacking-Knives-246x300.jpg\" alt=\"Backpacking Knives\" width=\"246\" height=\"300\" /></a>There are a lot of things that people really don't need to take in to the outdoors with them, and while some people will want to include a knife in this category, there are many uses for a good knife that make it, in my opinion, an essential part of any backpack. Of course there are many kinds of knives, and <strong>backpacking knives</strong> are s specific breed of knife.
 <h2>Features of Backpacking Knives</h2>
@@ -49,34 +30,6 @@ Another good alternative to backpacking knives is a multi-tool. The <a href=\"ht
 	p.meta_desc = "Reviews of the best backpacking knives, along with information on what to look for in a backpacking knife."
 	p.category = "Knives"
 end
-
-Post.seed do |p|
-	p.id = 1076
-	p.content = "[caption id=\"attachment_1118\" align=\"alignright\" width=\"300\" caption=\"From {link:http://www.flickr.com/photos/46956797@N00/}jcolman{/link}\"]<img class=\"size-medium wp-image-1118 \" title=\"snowshoes\" src=\"http://www.tenpoundbackpack.com/wp-content/uploads/2011/11/snowshoes-300x200.jpg\" alt=\"snowshoes\" width=\"300\" height=\"200\" />[/caption]
-
-I've always thought that the best thing about winter backpacking is the snow. It transforms the whole landscape, and if nothing else, makes for a lot of great pictures and something a little different from the usual backpacking experience.
-
-Of course one of the worst things about winter backpacking is, also, the snow. It gets you cold and wet, and makes getting anywhere a lot more effort. Fortunately, there is way to help with that, and it is snowshoes.
-<h2>Backpacking Snowshoes</h2>
-Snowshoes are a great investment if you plan to do any backpacking in the snow. I've personally done a few winter trips with <a href=\"http://www.tenpoundbackpack.com/best-snowshoes/\">snowshoes</a>, and I can tell you that they are a whole lot of fun. The introduce a bit of novelty in to the whole backpacking experience, and make backpacking a little more interesting in general.
-
-There are a few things you need to keep in mind, however, with snowshoes.
-<ul>
-	<li><strong>Men and Women</strong> - Men's snowshoes and women's snowshoes really are different. A lot of<!--more--> the time, different versions of the same product for men and women is mostly marketing, but for snowshoes there really is a difference, and that difference has to do with weight. The surface area of a snowshoe is built to accommodate a certain amount of weight. The more weight there is, the more surface area on the snowshoe there has to be. Because men weigh more, on average, than women do, they need bigger snowshoes.</li>
-	<li><strong>Backpacks</strong> - Related to the point above, when you take a backpack with you, you need to account for the extra weight of the backpack. If the weight of you and your backpack is too much for your snowshoes then you end up sinking right in, and the snowshoes become useless weight on your feet. No fun.</li>
-</ul>
-So it's important to get the right pair of snowshoes. Some of the <a href=\"http://www.tenpoundbackpack.com/best-snowshoes/\">best snowshoes</a> actually have removable tails that you can buy that make them ideal for backpackers looking to do a little winter backpacking. You put the tail on when you plan on going out with a backpack, to accommodate the extra weight. And if you want to go hiking, you take the tails off, to make the snowshoes lighter.
-
-A lot of people tend to avoid things like winter camping and winter backpacking because it seems a little foreign and dangerous maybe. But with things like snowshoes, you can actually have a lot of fun out in the snow. And the best part is that you probably wont have to share the trail, or your campsite with anyone else."
-	p.title = "Using Snowshoes for Better Winter Backpacking"
-	p.thumbs_up = 83
-	p.thumbs_down = 2
-	p.large_image_url = "2011/11/snowshoes-300x200.jpg"
-	p.thumb_image_url = "2011/11/thumbs/snowshoes-300x200.jpg"
-	p.meta_title = "Using Snowshoes for Better Winter Backpacking"
-	p.meta_desc = "Make winter backpacking more enjoyable with a pair of snowshoes."
-	p.category = "Winter Camping"
-end	
 
 Post.seed do |p|
 	p.id = 1808
@@ -10552,48 +10505,6 @@ Deals end on <strong>November 8th</strong>, so hurry and get shopping!"
 end	
 
 Post.seed do |p|
-	p.id = 1103
-	p.content = "As you can tell, there is a new front page here at Ten Pound Backpack. I've put the blog portion of the website back to work, and hopefully I'll be able to keep it updated. The site has been becoming steadily more popular, and I have been getting a lot of great email from people who like the site, and I'm hoping I can channel some of that in to the new blog.
-
-The blog portion is going to be about all kinds of things related to backpacking, but mostly gear, as that has always been the major focus of Ten Pound Backpack. The gear lists were the first thing that I built on this site, and they have always been the main focus. I find them useful, and a lot of you seem to too, so they will continue to be the main focus of the website.
-
-Finally, this isn't the only change coming. I'll be making a few more minor changes to the front page, but will also be updating the lists with a bunch of new manufacturers and new products. Sometime in the future I'll also be adding a few new columns to the lists that have been suggested by readers. Hopefully the new columns will make the lists more useful to everyone.
-
-And if you are looking for the old front page you can find it by clicking on Articles up top, underneath the logo.
-
-Also, if you see anything glaringly wrong with the new design, please let me know through the contact link in the main menu. I've tested it out in a few different browsers and I cant see anything obvious that I've messed up, but I ended up doing quite a bit of fiddling to make it look pretty, and there's the chance that I've broken something.
-
-Anyway, I hope everyone enjoys the new site."
-	p.title = "New Front Page"
-	p.thumbs_up = 49
-	p.thumbs_down = 4
-	p.large_image_url = ""
-	p.thumb_image_url = ""
-	p.meta_title = ""
-	p.meta_desc = ""
-	p.category = "Site News"
-end	
-
-Post.seed do |p|
-	p.id = 1477
-	p.content = "Black friday sales are coming fast and heavy from all the usual backpacking and camping online retailers. The deals started a couple of days ago for most sites, but there is a whole new round of sales to take advantage of, and a lot of great deals to get in on.
-<h3><strong>Campsaver</strong></h3>
-Some of the best black friday sales on at Campsaver seem to be on sleeping pads. The <a href=\"http://www.campsaver.com/neoair-sleeping-pad\">Therm-A-Rest NeoAir</a>, for instance, which is a fantastic sleeping pad, very comfortable, is 25% off. There are also a couple <a href=\"http://www.campsaver.com/sim-comfort-sleeping-pad\">Exped</a> <a href=\"http://www.campsaver.com/sim-light-basic-2-5-m-sleeping-pad\">sleeping pads</a> on sale. Besides sleeeping pads, however, there are a whole bunch of <a href=\"http://www.campsaver.com/door-busters\">Black Friday Door Busters</a>, as well as over <a href=\"http://www.campsaver.com/\">20,000 items site wide</a> on sale for some amount. Definitely worth checking out.
-<h3><strong>REI</strong></h3>
-<a href=\"http://www.rei.com\">REI</a> seems to be running the same sale from November 18th through to the 28th, so if you haven't already checked it out the sales might be a little picked through by now. One thing you should definitely check out, however, is the <a href=\"http://www.rei.com/winter-sale-daily-deal\">daily deal</a> they are running. For the 25th it's the REI Half Dome 2 Tent, but there's no telling what it will be tomorrow, so check back to see what goes on sale.
-<h3><strong>Backcountry</strong></h3>
-Backcountry has a grand total of <a href=\"http://www.backcountry.com/store/dc/1502/Backcountry-2011-Black-Friday-Sale.html\">17,000+ items on sale for black friday</a>. Lots of good deals to be had, but one of the most surprising items I found was a <a href=\"http://www.backcountry.com/necky-looksha-12-si-kayak\">few</a> <a href=\"http://www.backcountry.com/necky-vector-13-kayak-with-rudder\">kayaks</a> with a decent amount taken off. Kayaks are expensive, and though they are out of season at the moment for most of us it might not be a bad idea to grab them now for summer. But even if kayaks aren't up your alley, definitely check the thousands of other items on sale."
-	p.title = "Backpacking, Hiking and Camping Black Friday Sales"
-	p.thumbs_up = 18
-	p.thumbs_down = 0
-	p.large_image_url = ""
-	p.thumb_image_url = ""
-	p.meta_title = "Backpacking, Hiking and Camping Black Friday Sales"
-	p.meta_desc = "Find black friday sales for camping, backpacking and hiking gear from major online retailers."
-	p.category = "Sales"
-end	
-
-Post.seed do |p|
 	p.id = 1868
 	p.content = "<a href=\"http://www.rei.com/product/721900/hennessy-hammock-explorer-ultralight-asym-classic-hammock\"><img class=\"alignright size-medium wp-image-1930\" title=\"Backpacking Hammock\" src=\"http://www.tenpoundbackpack.com/wp-content/uploads/2011/12/Backpacking-Hammock-300x197.jpg\" alt=\"Backpacking Hammock\" width=\"300\" height=\"197\" /></a>There are a few different ways to get a good sleep at night while backpacking, and a hammock is one way that not nearly enough people consider when they go backpacking. A <strong>backpacking hammock</strong> has a couple of things going for it that make it a good option for backpackers. One is that hammocks keep you up off the ground, so you never have to worry about puddles and other forms of groundwater. They're also rather comfortable, and will help you get a great night of sleep.
 <h2>Backpacking Hammock</h2>
@@ -10813,9 +10724,7 @@ end
 
 Post.seed do |p|
 	p.id = 1070
-	p.content = "[caption id=\"attachment_1108\" align=\"alignright\" width=\"199\" caption=\"From {link:http://www.flickr.com/photos/20929338@N00/}f_r_e{/link}\"]<img class=\"size-medium wp-image-1108  \" style=\"border-width: 1px; border-color: black; border-style: solid;\" title=\"winter camping gear\" src=\"http://www.tenpoundbackpack.com/wp-content/uploads/2011/11/winter-camping-gear-199x300.jpg\" alt=\"winter camping gear\" width=\"199\" height=\"300\" />[/caption]
-
-Winter camping can be a lot of fun, but the big hurdle for winter camping is always gear. There are a few purchases, like good winter boots, that you cant really avoid, but there are a few winter camping gear items that can be improvised from the gear you have, and maybe a few cheap addons.
+	p.content = "Winter camping can be a lot of fun, but the big hurdle for winter camping is always gear. There are a few purchases, like good winter boots, that you cant really avoid, but there are a few winter camping gear items that can be improvised from the gear you have, and maybe a few cheap addons.
 <h2>Winter Sleeping Bags</h2>
 <a href=\"http://www.tenpoundbackpack.com/winter-sleeping-bags/\">Winter sleeping bags</a> are one of the most important items in any winter camping gear list. No matter how great the scenery is, if you're shivering all night you are definitely not having any fun. There are, however, a few good ways to improvise a winter sleeping bag out of a summer sleeping bag.
 <ul>
@@ -13707,9 +13616,7 @@ end
 
 Post.seed do |p|
 	p.id = 1065
-	p.content = "[caption id=\"attachment_1120\" align=\"alignright\" width=\"300\" caption=\"From {link:http://www.flickr.com/photos/53625232@N00/}jalexartis{/link}\"]<img class=\"size-medium wp-image-1120 \" title=\"sleeping bag and sleeping pad\" src=\"http://www.tenpoundbackpack.com/wp-content/uploads/2011/11/sleeping-bag-and-sleeping-pad-300x200.jpg\" alt=\"sleeping bag and sleeping pad\" width=\"300\" height=\"200\" />[/caption]
-
-Having a good sleeping bag is important for getting a good night's sleep, as is a good sleeping pad. But having a sleeping bag and a sleeping pad that work together to keep you warm is better.
+	p.content = "Having a good sleeping bag is important for getting a good night's sleep, as is a good sleeping pad. But having a sleeping bag and a sleeping pad that work together to keep you warm is better.
 <h2>Sleeping Bag Quilts</h2>
 Sleeping bag quilts are a great example of this in action (<a href=\"http://www.nunatakusa.com\" rel=\"nofollow\">Nunatak</a> is a great sleeping bag quilt manufacturer). Sleeping bag quilts, for those not in the know, have an enclosed footbox, to keep your feet warm, and then open up on the bottom of the bag as it goes up your body. The justification for this design is that sleeping bags keep you warm through the loft created by the insulation. Any insulation under you is being wasted, because it is being crushed down. So why not remove it and save the weight?
 
@@ -14163,51 +14070,6 @@ Some of the best winter fleece jacket options for both men and women.
 	p.meta_title = "Winter Fleece Jackets - Info and Reviews"
 	p.meta_desc = "Find the best winter fleece jackets, so that you can be sure you wont be cold, even in the worst winter weather conditions."
 	p.category = "Jackets"
-end	
-
-Post.seed do |p|
-	p.id = 1144
-	p.content = "There are a few good sales over at <a href=\"http://www.altrec.com/\" rel=\"nofollow\">Altrec</a> that are worth checking out if you're in the market for some new backpacking or camping gear.
-<ul>
-	<li><a href=\"http://www.altrec.com/sorel-boots/\" rel=\"nofollow\">Sorel Boots</a> - Altrec is having a closeout sale on big chunk of their Sorel boot line. In particular there are a few snow boots and winter boots on sale, so anyone looking for some good footwear for the winter might want to take a look. Sale ends on <strong>November 10th</strong>.</li>
-	<li><a href=\"http://www.altrec.com/patagonia/\" rel=\"nofollow\">Patagonia</a> - Altrec is also having a big sale on a wide variety of Patagonia gear. I'm wearing a Patagonia sweater right now and I own a couple other pieces Patagonia gear. They make very nice gear, but it is expensive, which is why it's always good to catch them when they're on sale. Looks like sales go up to the <strong>50%</strong> mark, and it ends on <strong>November 14th</strong>.</li>
-	<li><a href=\"http://www.altrec.com/mountain-hardwear/\" rel=\"nofollow\">Mountain Gear</a> - Finally, Altrec also has a good sale on their Mountain Gear line. It looks like the sales go up to <strong>50%</strong>. Altrec carries an amazing <strong>600+ items</strong> from Mountain Gear, so if you like Mountain Gear this might be a good sale to check out. It <strong>ends on November 15th</strong>.</li>
-</ul>"
-	p.title = "Big Sales at Altrec"
-	p.thumbs_up = 82
-	p.thumbs_down = 0
-	p.large_image_url = ""
-	p.thumb_image_url = ""
-	p.meta_title = "Big Sales at Altrec"
-	p.meta_desc = ""
-	p.category = "Sales"
-end	
-
-Post.seed do |p|
-	p.id = 1437
-	p.content = "There are a few online camping and backpacking retailers that are starting the Thanksgiving sales early, and if you just cant wait to get the shopping started, you will likely be able to find something for you or that special someone.
-<h3><a href=\"http://www.campsaver.com/\">CampSaver</a></h3>
-First up is CampSaver. They've got plenty of items on sale. Way too many to list. The highlights, however, include a whole lot of Patagonia clothing, as well as some excellent RAB clothing. RAB down sleeping bags were one of the recent big additions to the <a href=\"http://www.tenpoundbackpack.com/gear-lists/sleeping-bags/\">compare sleeping bags list</a>, and they make a lot of great down garments too.
-
-I also noticed that the <a href=\"http://www.campsaver.com/u-l-down-inner-jacket\">Mont Bell U.L. Down Inner Jacket</a> (<a href=\"http://www.campsaver.com/u-l-down-inner-jacket-1\">women's version</a>) is on sale too. Lots of down garments to choose from.
-<h3><a href=\"http://www.backcountry.com/store/dc/1500/Backcountry-2011-Thanksgiving-Sale.html\">BackCountry</a></h3>
-BackCountry isn't missing out on the pre-sale sales either. 17,000+ items on sale, but a few notable sale items that lightweight backpackers might be interested include the <a href=\"http://www.backcountry.com/store/search.html?&amp;q=big+agnes+fly+creek\">Big Agnes Fly Creek UL</a> line of tents, as well as a few<a href=\"http://www.backcountry.com/rab-sleeping-bags\"> RAB sleeping bags</a> and <a href=\"http://www.backcountry.com/sea-to-summit-sleeping-bags\">Sea to Summit sleeping bags</a>.
-
-But that's really only scratching the surface here. There's plenty of good deals to be had.
-<h3><a href=\"http://www.rei.com/Sale+and+Clearance\">REI</a></h3>
-REI is also getting in on the pre-black friday sales. Again, lots of great sales to be had. A few random but notable selections include large portion of their <a href=\"http://www.rei.com/brand/SmartWool/q/Sale+and+Clearance\">Smartwool clothing</a>. For those not in the know, Smartwool makes some great wool products. Socks, insulating layers and just about anything else you could think to make out of wool.
-
-REI also has some good deals on <a href=\"http://www.rei.com/category/40004010/q/Snowshoe+Sale+and+Clearance\">snowshoes</a> if you plan on getting out for some winter hiking.
-
-REI is also running a <a href=\"http://www.rei.com/winter-sale-daily-deal\">daily deal</a>, so be sure to check back every day to see what the new deal is."
-	p.title = "Early Black Friday Camping Sales"
-	p.thumbs_up = 61
-	p.thumbs_down = 2
-	p.large_image_url = ""
-	p.thumb_image_url = ""
-	p.meta_title = "Early Black Friday Camping Sales"
-	p.meta_desc = "Get in on early Black Friday camping sales from the biggest online retailers."
-	p.category = "Sales"
 end	
 
 Post.seed do |p|

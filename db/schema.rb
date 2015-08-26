@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809161931) do
+ActiveRecord::Schema.define(version: 20150826024248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,10 @@ ActiveRecord::Schema.define(version: 20150809161931) do
     t.integer  "max_battery"
     t.string   "rechargeable"
     t.boolean  "is_api_searchable"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "large_image_url"
+    t.datetime "last_picture_search"
   end
 
   add_index "gears", ["category_id"], name: "index_gears_on_category_id", using: :btree
@@ -107,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150809161931) do
     t.string   "category"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "title_param"
   end
 
   create_table "users", force: :cascade do |t|

@@ -38,6 +38,10 @@ gem 'rails_admin', '~> 0.6.8'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'nokogiri', '~> 1.6.6.2'
 gem 'gibbon', '~> 1.2.0'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'truncate_html', '~> 0.9.3'
+gem 'sanitize', '~> 4.0.0'
+gem 'exception_notification', '~> 4.1.1'
 
 
 # Use ActiveModel has_secure_password

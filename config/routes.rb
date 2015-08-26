@@ -8,6 +8,17 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
+  get '/gear-lists/lightweight-tents' => redirect('/gear-lists/tents')
+  get '/gear-lists/lightweight-sleeping-bags' => redirect('/gear-lists/sleeping-bags')
+  get '/gear-lists/lightweight-backpacks' => redirect('/gear-lists/backpacks')
+  get '/gear-lists/lightweight-sleeping-pads' => redirect('/gear-lists/sleeping-pads')
+  get '/gear-lists/lightweight-bivy-bags' => redirect('/gear-lists/bivy-bags')
+  get '/gear-lists/lightweight-water-filters' => redirect('/gear-lists/water-filters')
+  get '/gear-lists/lightweight-stoves' => redirect('/gear-lists/stoves')
+  get '/gear-lists/lightweight-trekking-poles' => redirect('/gear-lists/trekking-poles')
+  get '/gear-lists/lightweight-tarp-tents' => redirect('/gear-lists/tarps')
+  get '/gear-lists/tarp-tents' => redirect('/gear-lists/tarps')
+
   resources :gears, except: :index, path: '/gear'
   resources :merchant_categories, except: [:index, :show]
   resources :categories, except: :index, path: '/gear-lists'
@@ -17,7 +28,9 @@ Rails.application.routes.draw do
   get '/index/post' => 'posts#index', as: 'posts'
   get '/index/page' => 'pages#index', as: 'pages'
 
-  resources :posts, only: [:edit, :show, :update], path: '', id: /\d{4}\/.+/
+  get '/*id/:title_params' => 'posts#show', as: 'post'
+
+  #resources :posts, only: [:edit, :show, :update], path: '', id: /\d{4}\/.+/
   resources :pages, only: [:edit, :show, :update], path: ''
 
 

@@ -8177,7 +8177,7 @@ end
 Gear.seed do |g|
 	g.id = 2792
 	g.category_id = 1
-	g.name = "ZPacks ZPacks 40"
+	g.name = "ZPacks 40"
 	g.weight = '335'
 	g.shape = 'Mummy'
 	g.quilt = 'Yes'
@@ -41105,7 +41105,7 @@ end
 Gear.seed do |g|
 	g.id = 2794
 	g.category_id = 1
-	g.name = "ZPacks ZPacks 20"
+	g.name = "ZPacks 20"
 	g.weight = '485'
 	g.shape = 'Mummy'
 	g.quilt = 'Yes'
@@ -55833,7 +55833,7 @@ end
 Gear.seed do |g|
 	g.id = 2793
 	g.category_id = 1
-	g.name = "ZPacks ZPacks 30"
+	g.name = "ZPacks 30"
 	g.weight = '408'
 	g.shape = 'Mummy'
 	g.quilt = 'Yes'
@@ -59501,7 +59501,7 @@ end
 Gear.seed do |g|
 	g.id = 2795
 	g.category_id = 1
-	g.name = "ZPacks ZPacks 10"
+	g.name = "ZPacks 10"
 	g.weight = '561'
 	g.shape = 'Mummy'
 	g.quilt = 'Yes'

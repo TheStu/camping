@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
 
-	def to_param
-    "#{id}/#{title.parameterize}"
-  end
+  # def to_param
+  #   "#{id}/#{title.parameterize}"
+  # end
 
   def formatted_content
     text = self.content

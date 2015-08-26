@@ -1,6 +1,9 @@
 class GearsController < ApplicationController
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, except: [:show]
+  load_and_authorize_resource
+
   # GET /gears
   # GET /gears.json
   def index

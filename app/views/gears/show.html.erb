@@ -1,4 +1,5 @@
 <% provide(:title, "#{@gear.name} Review") %>
+<% provide(:canonical, gear_url(@gear)) %>
 <% provide(:desc, "Prices and Reviews for the #{@gear.name}, plus comparisons with #{@gear.category.gears.count} other #{@gear.category.name.downcase}") %>
 
 <div class="container-fluid">
@@ -15,16 +16,26 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6">
-      <%= image_tag "default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}" %>
+      <% if @gear.large_image_url.present? %>
+        <%= image_tag @gear.large_image_url, class: "pull-right", alt: "#{@gear.name}" %>
+      <% else %>
+        <%= image_tag "default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}" %>
+      <% end %>
     </div>
     <div class="col-lg-6">
       <table class="gear-table">
         <% @gear.attributes.each do |attribute, value| %>
-          <% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'name', 'large_image_url', 'thumb_image_url'].include?(attribute) || !value.present? %>
+          <% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'name', 'large_image_url', 'thumb_image_url', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
             <tr>
               <td class="gear-table-attribute"><%= attribute.gsub('gear_', '').titleize %></td>
               <% if attribute == 'weight' %>
                 <td><%= value.to_f / 1000 %> kg</td>
+              <% elsif attribute == 'min_temp' %>
+                <td><%= value %> °F</td>
+              <% elsif attribute == 'capacity' && @gear.category.name == "Backpacks" %>
+                <td><%= value %> L</td>
+              <% elsif attribute == 'life_time' && @gear.category.name == "Water Filters" %>
+                <td><%= value %> Hours</td>
               <% else %>
                 <td><%= value %></td>
               <% end %>

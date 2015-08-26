@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, except: [:show, :index]
+  load_and_authorize_resource
+
   # GET /pages
   # GET /pages.json
   def index
