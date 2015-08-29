@@ -4,11 +4,11 @@ task :wp_analytics => :environment do
 
 	Post.all.each do |post|
 		['rei', 'campsaver', 'backcountry', 'ula-equipment', 'gossamergear.com'].each do |retailer|
-			results = post.content.scan(/<a href=("http:\/\/w*.?#{retailer}.com[\w\/-]+")/)
+			results = post.content.scan(/<a (href="http:\/\/w*.?#{retailer}.com[\w\/-]+")/)
 			if results.present?
 				unique_results = results.uniq
 				unique_results.each do |result|
-					post.content = post.content.gsub(result.first, "#{result.first} onclick=\"trackOutboundLink('#{result.first.gsub('"', '')}'); return false;\"")
+					post.content = post.content.gsub(result.first, "onclick=\"trackOutboundLink('#{result.first.gsub('"', '').gsub('href=', '')}'); return false;\" #{result.first}")
 				end
 			end
 		end
@@ -17,11 +17,11 @@ task :wp_analytics => :environment do
 
 	Page.all.each do |post|
 		['rei', 'campsaver', 'backcountry', 'ula-equipment', 'gossamergear.com'].each do |retailer|
-			results = post.content.scan(/<a href=("http:\/\/w*.?#{retailer}.com[\w\/-]+")/)
+			results = post.content.scan(/<a (href="http:\/\/w*.?#{retailer}.com[\w\/-]+")/)
 			if results.present?
 				unique_results = results.uniq
 				unique_results.each do |result|
-					post.content = post.content.gsub(result.first, "#{result.first} onclick=\"trackOutboundLink('#{result.first.gsub('"', '')}'); return false;\"")
+					post.content = post.content.gsub(result.first, "onclick=\"trackOutboundLink('#{result.first.gsub('"', '').gsub('href=', '')}'); return false;\" #{result.first}")
 				end
 			end
 		end
