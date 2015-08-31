@@ -1,3 +1,5 @@
+<% provide(:title, 'Camping Gear Search') %>
+
 <div class="container-fluid">
 
 	<div class="row">
@@ -15,46 +17,62 @@
   	</div>
 	</div>
 
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-     	<table class="results-table">
-     	  <% @results.each do |result| %>
-     	    <tr class="result">
+  <% if @results.present? %>
 
-     	      <td class="picture-td">
-   	          <% if result['Thumbnail_Image'].present? %>
-   	            <%= link_to image_tag(result['Thumbnail_Image'], alt: "#{pretty_name(result)}", class: 'results-image'), result['Buy_URL'], rel: 'nofollow', target: '_blank', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
-   	          <% else %>
-   	            <%= image_tag 'default.jpg', alt: "#{pretty_name(result)}", class: 'results-image' %>
-   	          <% end %>
-     	      </td>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+       	<table class="results-table">
+       	  <% @results.each do |result| %>
+       	    <tr class="result">
 
-     	      <td class="info-td">
-     	        <%= link_to pretty_name(result), result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-link', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
-     	        <br>
-     	        <span class="results-categories">
-     	          <%= result['Department_Name'] if result['Department_Name'].present? %>
-     	          <% if result['Category_Name'].present? %>
-     	            <span class="cat-pointer">></span> <%= result['Category_Name'] %>
+       	      <td class="picture-td">
+     	          <% if result['Thumbnail_Image'].present? %>
+     	            <%= link_to image_tag(result['Thumbnail_Image'], alt: "#{pretty_name(result)}", class: 'results-image'), result['Buy_URL'], rel: 'nofollow', target: '_blank', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
+     	          <% else %>
+     	            <%= image_tag 'default.jpg', alt: "#{pretty_name(result)}", class: 'results-image' %>
      	          <% end %>
-     	          <% if result['Subcategory_Name'].present? %>
-     	            <span class="cat-pointer">></span> <%= result['Subcategory_Name'] %>
-     	          <% end %>
-     	        </span>
-     	        <%= content_tag :p, truncate(result['Abbreviated_Description'], :length => 150, :omission => " ..."), class: 'results-desc' %>
-     	        <% if result['Sale_Price'] == result['Retail_Price'] %>
-     	          <%= link_to result['Retail_Price'], result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-sale-price', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
-     	        <% else %>
-     	          <%= content_tag :p, result['Retail_Price'], class: 'results-retail-price' %>
-     	          <%= link_to result['Sale_Price'], result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-sale-price', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
-     	        <% end %>
-     	        <%= content_tag :p, "from #{content_tag :span, merch_name(result), class: 'merchant'}".html_safe, class: 'results-merch-name' %>
-     	      </td>
-     	    </tr>
-     	  <% end %>
-     	</table>
-    </div>  
-  </div>
+       	      </td>
+
+       	      <td class="info-td">
+       	        <%= link_to pretty_name(result), result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-link', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
+       	        <br>
+       	        <span class="results-categories">
+       	          <%= result['Department_Name'] if result['Department_Name'].present? %>
+       	          <% if result['Category_Name'].present? %>
+       	            <span class="cat-pointer">></span> <%= result['Category_Name'] %>
+       	          <% end %>
+       	          <% if result['Subcategory_Name'].present? %>
+       	            <span class="cat-pointer">></span> <%= result['Subcategory_Name'] %>
+       	          <% end %>
+       	        </span>
+       	        <%= content_tag :p, truncate(result['Abbreviated_Description'], :length => 150, :omission => " ..."), class: 'results-desc' %>
+       	        <% if result['Sale_Price'] == result['Retail_Price'] %>
+       	          <%= link_to result['Retail_Price'], result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-sale-price', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
+       	        <% else %>
+       	          <%= content_tag :p, result['Retail_Price'], class: 'results-retail-price' %>
+       	          <%= link_to result['Sale_Price'], result['Buy_URL'], rel: 'nofollow', target: '_blank', class: 'results-sale-price', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
+       	        <% end %>
+       	        <%= content_tag :p, "from #{content_tag :span, merch_name(result), class: 'merchant'}".html_safe, class: 'results-merch-name' %>
+       	      </td>
+       	    </tr>
+       	  <% end %>
+       	</table>
+      </div>  
+    </div>
+
+  <% else %>
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="well center">
+          Oops, looks there aren't any results for that search term. Don't give up now though!
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+
 </div>
 
 <script>

@@ -17,9 +17,9 @@
   <div class="row">
     <div class="col-lg-6">
       <% if @gear.large_image_url.present? %>
-        <%= image_tag @gear.large_image_url, class: "pull-right", alt: "#{@gear.name}" %>
+        <%= link_to image_tag(@gear.large_image_url, class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
       <% else %>
-        <%= image_tag "default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}" %>
+        <%= link_to image_tag("default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
       <% end %>
     </div>
     <div class="col-lg-6">

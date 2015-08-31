@@ -886,7 +886,7 @@ Here are a few tarp tents that are a bit more robust and that would be well suit
 	<li><a href=\"http://www.campsaver.com/twin-sisters-shelter-2-person\" rel=\"nofollow\">MSR Twin Sisters</a> - Don't let the name fool you, this shelter is men friendly too. The Twin Sisters comes with a snow skirt so you're protected right down to the ground. You wont have to worry about getting a gust of snow blown wind in the face at night.</li>
 </ul>
 There are more just like these over at the <a href=\"http://www.tenpoundbackpack.com/gear-lists/tarp-tents/\">Lightweight Tarp Tents List</a>."
-	p.title = "Tarp Camping in Winter"
+	p.title = "Tarp Camping In Winter"
 	p.thumbs_up = 44
 	p.thumbs_down = 5
 	p.large_image_url = "2011/04/Tarp-Camping-in-Winter.jpg"
@@ -1452,7 +1452,7 @@ Hiking in <a href=\"http://www.shop-denali.com/Vibram-Fivefingers/3815/dept\" re
 Maybe your ultimate goal is not to be able to go<a href=\"http://www.tenpoundbackpack.com/hiking-barefoot/\"> hiking barefoot</a>, but hiking in <a href=\"http://www.shop-denali.com/Vibram-Fivefingers/3815/dept\" rel=\"nofollow\">vibram five fingers</a> is an excellent way to work towards that goal if you are interested in barefoot hiking. It will help toughen the muscles in your feet and, if you're interested in hiking barefoot, will make your feet better able to withstand that more intimate interaction with the ground. If you just want to go hiking in vibram five fingers your feet will eventually toughen up, and if and when you put your hiking shoes back on, all that extra padding on your toughened feet will allow you to breeze through a full day of hiking.
 
 Something else to keep in mind is that you need to allow your feet to adjust to life without shoes. You might not realize it, but shoes have a subtle offset between the heel and the toes, just like a pair of high heels, only more subtle. And your feet are conditioned to this extra bit of padding, so when you remove it, your feet have to adjust to a heel that's suddenly slightly lower than it was before. If you think about how many years and miles you've spent walking around in shoes, it's obvious that you wont adjust to this new way of walking overnight."
-	p.title = "Hiking in Vibram Five Fingers"
+	p.title = "Hiking In Vibram Five Fingers"
 	p.thumbs_up = 54
 	p.thumbs_down = 3
 	p.large_image_url = "2011/07/Hiking-in-Vibram-Five-Fingers.jpg"
@@ -1554,7 +1554,7 @@ A suggested christmas gifts for hikers.
 	<li><a href=\"http://www.backcountry.com/hydro-photon-steripen-adventurer-opti\" rel=\"nofollow\">SteriPEN Adventurer</a> - Access to clean water is always important when out for a hike, and if you need to refill, you will need some method of cleaning the water. The popular method is a water filter, but filters have too many moving parts and take a lot of effort to work and keep clean. But a UV filter, like the Adventurer, will have your water drinkable in just a few seconds with minimal fuss, which makes it a great christmas gift for hikers.</li>
 	<li><a href=\"http://www.backcountry.com/exped-downmat-sleeping-pad\" rel=\"nofollow\">Exped DownMat Sleeping Pad</a> - For the hiker who likes to turn a day trip in to an overnight excursion, a sleeping pad is an important piece of gear. For the colder months, however, the summer sleeping pads that most hikers have will be inadequate, and a warmer option is needed. The DownMat from Exped makes a great christmas gift for hikers because it comes with a layer of down built in, to trap trap body heat and reflect it, making sleeping overnight in cold conditions a warm and toasty experience.</li>
 </ul>"
-	p.title = "Christmas Gifts for Hikers"
+	p.title = "Christmas Gifts For Hikers"
 	p.thumbs_up = 75
 	p.thumbs_down = 5
 	p.large_image_url = "2011/09/Christmas-Gifts-for-Hikers.jpg"
@@ -1581,7 +1581,7 @@ A few suggested christmas gifts for campers.
 	<li><a href=\"http://www.backcountry.com/montbell-alpine-light-down-parka-mens\">Mont Bell Alpine Down Parka</a> (and the <a href=\"http://www.backcountry.com/montbell-alpine-light-down-parka-womens\" rel=\"nofollow\">Women's version</a>) - Camping during the colder months requires that you have the proper gear to stay warm, and few things will keep you warm like a good down jacket. Goose down is lighter and packs smaller than anything else that will keep you as warm, and Mont Bell is well known for making excellent down garments.</li>
 	<li><a href=\"http://www.campsaver.com/gt-knife\" rel=\"nofollow\">Helle GT Knife</a> - Every camper should have a good camping knife. They come in handy in a variety of ways around camp, and make a great tool in emergency situations. The GT knife by Helle has a classic design that most will be familar with, and is made from some really high quality steel that is guaranteed to hold up over the years, making it a great christmas gift for campers on your list.</li>
 </ul>"
-	p.title = "Christmas Gifts for Campers"
+	p.title = "Christmas Gifts For Campers"
 	p.thumbs_up = 49
 	p.thumbs_down = 0
 	p.large_image_url = "2011/09/Christmas-Gifts-for-Campers.jpg"
@@ -2226,7 +2226,7 @@ A <a href=\"http://www.tenpoundbackpack.com/best-camping-knife/\">camping knife<
 	<li><a href=\"http://www.rei.com/product/715771/leatherman-new-wave-multi-tool\" rel=\"nofollow\">Leatherman Wave Multi-Tool</a> - Leatherman is well known for making quality knives and multi-tools, and all the positive ratings indicate that the Wave lives up to that reputation. It has a few more features than the Skeletool. Besides the basics it has a wood saw, scissors and a file, plus a few more, so you wont lack for a tool in most situations. It weighs 240 grams, or 8.5 ounces, and based on the positive reviews is one of the best multi-tools for backpacking currently on the market.</li>
 </ul>
 Take a look at the <a href=\"http://www.tenpoundbackpack.com/best-camping-knife/\">Best Camping Knives</a> as well if you're looking for something a little more minimalist."
-	p.title = "Best Multi-Tool for Backpacking"
+	p.title = "Best Multi Tool For Backpacking"
 	p.thumbs_up = 45
 	p.thumbs_down = 2
 	p.large_image_url = "2011/07/Best-Multi-Tool-for-Backpacking-300x300.jpg"
