@@ -27,7 +27,9 @@
 	<body>
 
 		<%= render 'shared/header' %>
-		<%= yield %>
+		<div class="container-fluid">
+				<%= yield %>
+		</div>	
 
 		<script type="text/javascript">
 			ouibounce(false, {
@@ -62,7 +64,7 @@
 			            	<input type="text" name="b_c41f921ac1d23d7ddeb222cb0_038630fc36" tabindex="-1" value="">
 		            	</div>
 			            <div class="clear">
-			            	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+			            	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger">
 		            	</div>
 		            </div>
 			        </form>

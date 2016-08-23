@@ -6,6 +6,7 @@ class StaticsController < ApplicationController
 	end
 
   def home
+    @posts = Post.order('published_at DESC').paginate(:page => params[:page], :per_page => 10)
   end
 
   def about

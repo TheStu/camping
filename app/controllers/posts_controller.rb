@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(user: current_user))
 
     respond_to do |format|
       if @post.save
@@ -67,11 +67,11 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :title, :thumbs_up, :thumbs_down, :large_image_url, :thumb_image_url, :meta_title, :meta_desc, :category)
+      params.require(:post).permit(:content, :title, :thumbs_up, :thumbs_down, :large_image_url, :thumb_image_url, :meta_title, :meta_desc, :category, :user_id)
     end
 end

@@ -4,6 +4,10 @@ class Page < ActiveRecord::Base
     "#{title.parameterize}"
   end
 
+  def user
+    User.find_by_email('stuwashere@gmail.com')
+  end
+
   def formatted_content
     text = self.content
     text = '' if text.nil?

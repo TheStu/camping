@@ -1,0 +1,19 @@
+<div class="index-wrapper">
+  <div class="index-pic">
+    <% if post.large_image_url.present? %>
+      <%= link_to image_tag("/assets/#{post.large_image_url}", alt: post.title), post %>
+    <% else %>
+      <%= link_to image_tag("wp-default-lg.jpg", alt: post.title), post %>
+    <% end %>
+  </div>
+  <div class="index-content">
+    <h3><%= link_to post.title.titleize, post %></h3>
+    <p class="index-meta"><i class="glyphicon glyphicon-user"></i>By Stuart</p>
+    <p class="index-meta"><i class="glyphicon glyphicon-tags"></i><%= link_to post.post_category.name, post.post_category %></p>
+    <div class="index-text">
+      <%= truncate_html(index_scrub(post.content), :length => 250, :omission => "...").html_safe %>
+    </div>
+    <%= link_to "Read More <i class=\"glyphicon glyphicon-arrow-right glyphicon-white\"></i>".html_safe, post, class: 'btn btn-danger read-more-btn' %>
+  </div>
+</div>
+

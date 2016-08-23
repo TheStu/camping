@@ -1,140 +1,138 @@
 <% provide(:title, "Articles Index") %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 index-h1">
-      <h1>Articles</h1>
+<div class="row">
+  <div class="col-lg-12 index-h1">
+    <h1>Articles</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well">
+      <p><strong>Ten Pound Backpack is about making your backpack weigh less so that you can enjoy the outdoors more.</strong></p>
+      It's about lightweight backpacking, about ditching every redundant, too-heavy, useless piece of gear in your backpack and finding lighter replacements for the few pieces of gear that you actually do need, so that you can embrace lightweight backpacking. The goal is to get the base weight of your pack, that is the weight of everything minus what you're wearing, food, and water, to under ten pounds. There are a few things around the site that will help you get there...
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="well">
-        <p><strong>Ten Pound Backpack is about making your backpack weigh less so that you can enjoy the outdoors more.</strong></p>
-        It's about lightweight backpacking, about ditching every redundant, too-heavy, useless piece of gear in your backpack and finding lighter replacements for the few pieces of gear that you actually do need, so that you can embrace lightweight backpacking. The goal is to get the base weight of your pack, that is the weight of everything minus what you're wearing, food, and water, to under ten pounds. There are a few things around the site that will help you get there...
+<div class="row">
+  <div class="col-lg-4">
+    <h2>Backpacks</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(280, 768, 522, 438, 464, 478, 606, 790) %>
+    </ul>
+
+    <h2>Food and Drink</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(310, 312, 74, 430, 505, 509) %>
+    </ul>
+
+    <h2>Technology</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(526, 759, 779) %>
+    </ul>
+
+    <h2>Other</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(723, 840, 736, 837, 729, 417, 721, 421, 697, 732, 734) %>
+    </ul>
+  </div>
+
+  <div class="col-lg-4">
+    <h2>Sleeping</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(278, 301, 366, 432, 482, 512, 615, 784, 874) %>
+    </ul>
+
+    <h2>Clothing</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(741, 776, 745, 752, 756, 764, 766, 781) %>
+    </ul>
+
+    <h2>Winter</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(620, 624, 664, 637, 629, 677, 651, 669, 461, 712, 719, 655, 632, 703, 647, 674, 660, 681, 708, 715, 717, 701, 706) %>
+    </ul>
+  </div>
+
+  <div class="col-lg-4">
+    <h2>Shelters</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(275, 557, 319, 353, 434, 457, 488, 497, 514, 552, 575, 599, 747, 786) %>
+    </ul>
+
+    <h2>Other Gear</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(322, 518, 532, 560, 565, 578, 584, 588, 592) %>
+    </ul>
+
+    <h2>Feet</h2>
+    <ul>
+      <%= render partial: 'page', collection: Page.find(370, 771, 442, 452, 500, 572) %>
+    </ul>
+  </div>
+</div>
+
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-lg-4">
-      <h2>Backpacks</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(280, 768, 522, 438, 464, 478, 606, 790) %>
-      </ul>
-
-      <h2>Food and Drink</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(310, 312, 74, 430, 505, 509) %>
-      </ul>
-
-      <h2>Technology</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(526, 759, 779) %>
-      </ul>
-
-      <h2>Other</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(723, 840, 736, 837, 729, 417, 721, 421, 697, 732, 734) %>
-      </ul>
-    </div>
-
-    <div class="col-lg-4">
-      <h2>Sleeping</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(278, 301, 366, 432, 482, 512, 615, 784, 874) %>
-      </ul>
-
-      <h2>Clothing</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(741, 776, 745, 752, 756, 764, 766, 781) %>
-      </ul>
-
-      <h2>Winter</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(620, 624, 664, 637, 629, 677, 651, 669, 461, 712, 719, 655, 632, 703, 647, 674, 660, 681, 708, 715, 717, 701, 706) %>
-      </ul>
-    </div>
-
-    <div class="col-lg-4">
-      <h2>Shelters</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(275, 557, 319, 353, 434, 457, 488, 497, 514, 552, 575, 599, 747, 786) %>
-      </ul>
-
-      <h2>Other Gear</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(322, 518, 532, 560, 565, 578, 584, 588, 592) %>
-      </ul>
-
-      <h2>Feet</h2>
-      <ul>
-        <%= render partial: 'page', collection: Page.find(370, 771, 442, 452, 500, 572) %>
-      </ul>
-    </div>
-  </div>
-
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
+      <div class="index-ul-wrapper">
+        <div class="article-index-ul">
+          
         </div>
+      </div>
 
-        <div class="index-ul-wrapper">
-          <div class="article-index-ul">
-            
-          </div>
-        </div>
-
-    </div>
   </div>
 </div>
 

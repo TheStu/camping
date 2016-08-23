@@ -25,14 +25,15 @@ Rails.application.routes.draw do
 
   get '/gear' => redirect('/')
 
-  get '/index/post' => 'posts#index', as: 'posts'
   get '/index/page' => 'pages#index', as: 'pages'
 
-  get '/*id/:title_params' => 'posts#show', as: 'post'
 
-  #resources :posts, only: [:edit, :show, :update], path: '', id: /\d{4}\/.+/
+  resources :posts
   resources :pages, only: [:edit, :show, :update], path: ''
+  resources :post_categories, except: :index, path: 'post-category'
 
+  get '/index/post', to: redirect('/posts')
+  get '/:id/:title_param', to: redirect('/posts/%{id}')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

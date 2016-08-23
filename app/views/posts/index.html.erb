@@ -1,47 +1,27 @@
 <% provide(:title, "Ten Pound Backpack Post Archives") %>
 
-<div class="container-fluid">
-	<div class="row">
-	  <div class="col-lg-12 index-h1">
+<div class="row">
+  <div class="col-lg-12 index-h1">
 
-	    <h1>Ten Pound Backpack Post Archives</h1>
+    <h1>Ten Pound Backpack Post Archives</h1>
 
-    </div>
   </div>
+</div>
 
-  <div class="row">
-		<div class="col-lg-8 col-lg-offset-2">
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
 
-	    <% @posts.each do |post| %>
-	      <div class="index-wrapper">
-	        <div class="index-pic">
-	          <% if post.large_image_url.present? %>
-	            <%= link_to image_tag("/assets/#{post.large_image_url}", alt: post.title), post_path(post, post.title_param) %>
-	          <% else %>
-	            <%= link_to image_tag("wp-default-lg.jpg", alt: post.title), post_path(post, post.title_param) %>
-	          <% end %>
-	        </div>
-	        <div class="index-content">
-	          <h3><%= link_to post.title.titleize, post_path(post, post.title_param) %></h3>
-	          <p class="index-meta"><i class="glyphicon glyphicon-user"></i>By Stuart</p>
-	          <p class="index-meta"><i class="glyphicon glyphicon-tags"></i><%= post.category %></p>
-	          <div class="index-text">
-	            <%= truncate_html(index_scrub(post.content), :length => 250, :omission => "...").html_safe %>
-	          </div>
-	          <%= link_to "Read More <i class=\"glyphicon glyphicon-arrow-right glyphicon-white\"></i>".html_safe, post_path(post, post.title_param), class: 'btn btn-primary read-more-btn' %>
-	        </div>
-	      </div>
-	    <% end %>
-	  </div>
-	</div>
+    <%= render partial: 'shared/post', collection: @posts %>
 
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="post-paginate">
-			  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-			</div>
-			<br>
-			<br>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="post-paginate">
+		  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 		</div>
+		<br>
+		<br>
 	</div>
 </div>

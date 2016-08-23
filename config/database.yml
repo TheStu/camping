@@ -15,8 +15,8 @@ development:
   host: localhost
   database: camping_development
   pool: 5
-  username: stu
-  password: password
+  username: stuart
+  password:
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and

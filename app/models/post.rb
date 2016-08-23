@@ -1,8 +1,14 @@
 class Post < ActiveRecord::Base
 
-  # def to_param
-  #   "#{id}/#{title.parameterize}"
-  # end
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  belongs_to :user
+  belongs_to :post_category
+
+  def to_param
+    "#{title.parameterize}"
+  end
 
   def formatted_content
     text = self.content
@@ -18,5 +24,9 @@ class Post < ActiveRecord::Base
     text.insert 0, '<p>'
     text.html_safe.safe_concat("</p>")
 	end
+
+  def title_param
+    title.parameterize
+  end
 
 end

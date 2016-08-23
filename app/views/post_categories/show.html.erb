@@ -1,0 +1,20 @@
+<% provide(:title, "#{@post_category.name} Post Category") %>
+<% provide(:canonical, post_category_url(@post_category)) %>
+
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-1">
+		<h1>'<%= @post_category.name %>' Post Category</h1>
+		<br>
+		<%= render partial: 'shared/post', collection: @posts %>
+
+		<div class="center">
+			<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+		</div>
+		<br>
+		<br>
+	</div>
+
+	<div class="col-lg-2">
+		<%= render partial: 'shared/sidebar' %>
+	</div>
+</div>

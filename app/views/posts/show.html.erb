@@ -2,37 +2,13 @@
 <% provide(:desc, @post.meta_desc) %>
 <% content_for :canonical, post_url(@post, @post.title_param) %>
 
-<div  itemscope itemtype="http://schema.org/BlogPosting">
+<div class="row" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <meta itemprop="datePublished" content="<%= @post.created_at %>">
+  <meta itemprop="datePublished" content="<%= @post.published_at %>">
   <meta itemprop="author" content="Stuart Morris">
 
-  <div class="container-fluid wp-title-container">
-    <div class="row">
-      <div class="col-lg-12 wp-title">
-        <h1 itemprop="headline"><%= @post.title %></h1>
-        <p>by Stuart Morris</p>
-        <div class="wp-thumbs">
-          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-          <%= @post.thumbs_up %>
-          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-          <%= @post.thumbs_down %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'shared/wp_content', locals: { post: @post } %>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <div class="wp-content" itemprop="articleBody">
-          <%= @post.formatted_content %>
-          <br>
-          <br>
-        </div>
-      </div>  
-    </div>
-  </div>
 </div>
 
 <script>

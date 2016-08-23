@@ -42,6 +42,7 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'truncate_html', '~> 0.9.3'
 gem 'sanitize', '~> 4.0.0'
 gem 'exception_notification', '~> 4.1.1'
+gem 'friendly_id', '~> 5.1'
 
 
 # Use ActiveModel has_secure_password

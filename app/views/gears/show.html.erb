@@ -2,57 +2,53 @@
 <% provide(:canonical, gear_url(@gear)) %>
 <% provide(:desc, "Prices and Reviews for the #{@gear.name}, plus comparisons with #{@gear.category.gears.count} other #{@gear.category.name.downcase}") %>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 gear-h1">
-      <h1><%= @gear.name %></h1>
-      ( <%= link_to @gear.category.name, @gear.category %> )
-      <br>
-      <%= link_to "See Price", search_path(q: @gear.name), { class: 'btn btn-primary', role: 'button'} %>
-    </div>
-  </div>  
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-6">
-      <% if @gear.large_image_url.present? %>
-        <%= link_to image_tag(@gear.large_image_url, class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
-      <% else %>
-        <%= link_to image_tag("default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
-      <% end %>
-    </div>
-    <div class="col-lg-6">
-      <table class="gear-table">
-        <% @gear.attributes.each do |attribute, value| %>
-          <% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'name', 'large_image_url', 'thumb_image_url', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
-            <tr>
-              <td class="gear-table-attribute"><%= attribute.gsub('gear_', '').titleize %></td>
-              <% if attribute == 'weight' %>
-                <td><%= value.to_f / 1000 %> kg</td>
-              <% elsif attribute == 'min_temp' %>
-                <td><%= value %> °F</td>
-              <% elsif attribute == 'capacity' && @gear.category.name == "Backpacks" %>
-                <td><%= value %> L</td>
-              <% elsif attribute == 'life_time' && @gear.category.name == "Water Filters" %>
-                <td><%= value %> Hours</td>
-              <% else %>
-                <td><%= value %></td>
-              <% end %>
-            </tr>
-          <% end %>
-        <% end %>
-      </table>
-    </div>
+<div class="row">
+  <div class="col-lg-12 gear-h1">
+    <h1><%= @gear.name %></h1>
+    ( <%= link_to @gear.category.name, @gear.category %> )
+    <br>
+    <%= link_to "See Price", search_path(q: @gear.name), { class: 'btn btn-danger', role: 'button'} %>
   </div>
-  <br>
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      <div class="well">
-        The <%= @gear.name %> really is a great <%= @gear.category.name.singularize.downcase %>, there's no doubting that, but just in case you're not 100% set on it yet, we've got a whole bunch of other <%= @gear.category.name.downcase %> that you can find out more about using our super fancy interface. You never know, you might find something even better than the <%= @gear.name %> ... but probably not, it's kind of awesome!
-        <div class="gear-well-btn">
-          <%= link_to "Take Me To The #{@gear.category.name}!", category_path(@gear.category), class: "btn btn-primary", role: 'button' %>
-        </div>
+</div>  
+
+<div class="row">
+  <div class="col-lg-6">
+    <% if @gear.large_image_url.present? %>
+      <%= link_to image_tag(@gear.large_image_url, class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
+    <% else %>
+      <%= link_to image_tag("default/#{@gear.category.name.parameterize}.png", class: "pull-right", alt: "#{@gear.name}"), search_path(q: @gear.name) %>
+    <% end %>
+  </div>
+  <div class="col-lg-6">
+    <table class="gear-table">
+      <% @gear.attributes.each do |attribute, value| %>
+        <% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'name', 'large_image_url', 'thumb_image_url', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
+          <tr>
+            <td class="gear-table-attribute"><%= attribute.gsub('gear_', '').titleize %></td>
+            <% if attribute == 'weight' %>
+              <td><%= value.to_f / 1000 %> kg</td>
+            <% elsif attribute == 'min_temp' %>
+              <td><%= value %> °F</td>
+            <% elsif attribute == 'capacity' && @gear.category.name == "Backpacks" %>
+              <td><%= value %> L</td>
+            <% elsif attribute == 'life_time' && @gear.category.name == "Water Filters" %>
+              <td><%= value %> Hours</td>
+            <% else %>
+              <td><%= value %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="well">
+      The <%= @gear.name %> really is a great <%= @gear.category.name.singularize.downcase %>, there's no doubting that, but just in case you're not 100% set on it yet, we've got a whole bunch of other <%= @gear.category.name.downcase %> that you can find out more about using our super fancy interface. You never know, you might find something even better than the <%= @gear.name %> ... but probably not, it's kind of awesome!
+      <div class="gear-well-btn">
+        <%= link_to "Take Me To The #{@gear.category.name}!", category_path(@gear.category), class: "btn btn-danger", role: 'button' %>
       </div>
     </div>
   </div>

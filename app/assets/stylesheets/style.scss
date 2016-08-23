@@ -2,10 +2,21 @@
 	text-align: center;
 }
 
-.Apple-style-span {
-	font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif !important;
-	line-height: 1.5 !important;
-	color: #333 !important;
+a, .pagination > li > a, .pagination > li > span {
+	color: #d9534f;
+	&:hover, &:focus, &:active {
+		color: #c9302c;
+	}
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+	border-color: #c9302c;
+	background-color: #d9534f;
+}
+
+.form-control:focus {
+	border-color: #d9534f;
+	box-shadow: none;
 }
 
 #mc_embed_signup_scroll {
@@ -25,22 +36,33 @@ body {
 	letter-spacing: .01rem;
   font-weight: 400;
   font-style: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 html, body {
 	height: 100%;
 	min-height: 100%;
+	font-size: 18px;
 }
+
+h1 {
+	font-size: 45px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+
+////////////////////////////////////////////////
+//////////////////// NAVBAR ////////////////////
+////////////////////////////////////////////////
+
+
 
 .dropdown-menu li a {
 	font-size: 16px;
 	padding: 2px 20px;
-}
-
-.navbar .container-fluid {
-	background-image: image-url('classy_fabric.png');
-	background-color: #333;
-	background-color: rgba(51, 51, 51, 0.00);
 }
 
 @media (min-width: 768px) {
@@ -49,9 +71,16 @@ html, body {
 	}
 }
 
+.navbar {
+	margin-bottom: 15px;
+}
+
 .navbar-brand {
 	padding-top: 2px;
-	padding-bottom: 0;
+	padding-bottom: 2px;
+	img {
+		max-height: 100%;
+	}
 }
 
 .navbar-form {
@@ -66,6 +95,18 @@ html, body {
 	}
 }
 
+ul.navbar-nav {
+	li {
+		font-size: 16px;
+	}
+}
+
+
+//////////////////////////////////////////////
+//////////////////// HOME ////////////////////
+//////////////////////////////////////////////
+
+
 .home-container {
 	height: 100%;
 	margin-top: -33px;
@@ -79,16 +120,19 @@ html, body {
 }
 
 .home-cats {
-	padding-top: 100px;
+	hr {
+		margin-top: 0;
+	}
 	.home-cat {
-		margin: 15px;
+		margin: 0 8px 20px 8px;
 		display: inline-block;
 		a {
-			color: #9d9d9d;
+			color: white;
 			text-decoration: none;
-			padding: 10px 30px;
-			background-color: rgba(black, 0.8);
+			padding: 10px 20px;
+			background-color: #d9534f;
 			border-radius: 5px;
+			font-size: 15px;
 			&:hover, &:focus, &:active {
 				text-decoration: none;
 				color: white;
@@ -97,25 +141,31 @@ html, body {
 	}
 }
 
+
+////////////////////////////////////////////////////
+//////////////////// WP CONTENT ////////////////////
+////////////////////////////////////////////////////
+
+
+
 .wp-title-container {
 	background-image: image-url('wp_bg.jpg');
 	margin-top: -33px;
 	background-size: cover;
 }
 
-.wp-title {
+.head-block {
 	text-align: center;
 	h1 {
-		margin-bottom: 10px;
-		color: white;
+		margin-top: 0;
 	}
-	p {
-		margin-bottom: 5px;
-		color: white;
+	a {
+		font-size: 20	px;
 	}
 	.wp-thumbs {
 		color: #777;
-		margin-bottom: 70px;
+		font-size: 15px;
+		margin-top: 10px;
 		.glyphicon-thumbs-down {
 			margin-left: 15px;
 		}
@@ -125,8 +175,34 @@ html, body {
 	}
 }
 
+.blog-meta {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 5px;
+	text-align: left;
+	color: #aaa;
+	font-size: 13px;
+	i {
+		margin-right: 5px;
+	}
+	hr {
+		margin: 1px;
+	}
+}
+
+.gravatar-img {
+	border-radius: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
 .wp-content {
 	margin-top: 40px;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif !important;
+	line-height: 1.5 !important;
+	color: #333 !important;
 	.alignright {
 		float: right;
 	}
@@ -135,6 +211,9 @@ html, body {
 	}
 	li {
 		margin: 10px 0;
+	}
+	a {
+		text-decoration: underline;
 	}
 }
 
@@ -273,7 +352,9 @@ table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.d
 }
 
 .index-wrapper {
-  margin: 30px 0;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
   .index-pic {
     border-radius: 10px;
     border: 1px solid #dfdfdf;
@@ -329,9 +410,15 @@ table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.d
     }
     .index-text {
       padding: 10px 0 0 10px;
+      font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif !important;
+      line-height: 1.5 !important;
     }
     .read-more-btn {
       margin: 20px 0 0 20px;
+      font-size: 20px;
+      i {
+      	margin-left: 10px;
+      }
     }
   }
 }
