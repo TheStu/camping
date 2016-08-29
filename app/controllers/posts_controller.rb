@@ -69,6 +69,7 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.friendly.find(params[:id])
+      redirect_to action: action_name, id: @post.friendly_id, status: 301 unless @post.friendly_id == params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
