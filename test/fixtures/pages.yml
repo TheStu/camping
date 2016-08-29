@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
-  title: MyString
+  content: content one
+  title: title one
   thumbs_up: 1
   thumbs_down: 1
   large_image_url: MyString
@@ -11,8 +11,8 @@ one:
   meta_desc: MyString
 
 two:
-  content: MyText
-  title: MyString
+  content: content two
+  title: title two
   thumbs_up: 1
   thumbs_down: 1
   large_image_url: MyString

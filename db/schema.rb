@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822012910) do
+ActiveRecord::Schema.define(version: 20160824045613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20160822012910) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dotds", force: :cascade do |t|
+    t.string   "name"
+    t.string   "retail_price"
+    t.string   "sale_price"
+    t.string   "thumb_image"
+    t.text     "buy_url"
+    t.string   "percent_off"
+    t.string   "merchant_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -129,12 +141,13 @@ ActiveRecord::Schema.define(version: 20160822012910) do
     t.string   "meta_title"
     t.string   "meta_desc"
     t.string   "post_category_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "title_param"
     t.string   "slug"
     t.datetime "published_at"
     t.integer  "user_id"
+    t.integer  "view_count",       default: 0
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree

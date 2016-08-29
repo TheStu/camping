@@ -13,10 +13,10 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: camping_development
+  database: camping_dev
   pool: 5
   username: stuart
-  password:
+  password: password
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and

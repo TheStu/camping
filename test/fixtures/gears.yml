@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category_id: 1
-  name: MyString
+  category: one
+  name: name one
   weight: 1
   shape: MyString
   quilt: MyString
@@ -48,8 +48,8 @@ one:
   is_api_searchable: false
 
 two:
-  category_id: 1
-  name: MyString
+  category: one
+  name: name two
   weight: 1
   shape: MyString
   quilt: MyString

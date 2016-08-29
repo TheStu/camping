@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   root 'statics#home'
-  get 'about' => 'statics#about', as: 'about'
-  get 'contact' => 'statics#contact', as: 'contact'
+  # get 'about' => 'statics#about', as: 'about'
+  # get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -19,20 +19,20 @@ Rails.application.routes.draw do
   get '/gear-lists/lightweight-tarp-tents' => redirect('/gear-lists/tarps')
   get '/gear-lists/tarp-tents' => redirect('/gear-lists/tarps')
 
-  resources :gears, except: :index, path: '/gear'
+  resources :gears, except: [:index, :show], path: '/gear'
   resources :merchant_categories, except: [:index, :show]
   resources :categories, except: :index, path: '/gear-lists'
 
   get '/gear' => redirect('/')
-
-  get '/index/page' => 'pages#index', as: 'pages'
+  get '/index/page' => redirect('/camping-articles')
+  get '/camping-articles', to: 'pages#index', as: 'pages'
 
 
   resources :posts
   resources :pages, only: [:edit, :show, :update], path: ''
   resources :post_categories, except: :index, path: 'post-category'
 
-  get '/index/post', to: redirect('/posts')
+  get '/index/post', to: redirect('/')
   get '/:id/:title_param', to: redirect('/posts/%{id}')
 
   # The priority is based upon order of creation: first created -> highest priority.

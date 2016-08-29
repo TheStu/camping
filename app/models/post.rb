@@ -29,4 +29,8 @@ class Post < ActiveRecord::Base
     title.parameterize
   end
 
+  def self.most_popular
+    Post.order(:view_count).first(5)
+  end
+
 end

@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post.update(view_count: @post.view_count + 1)
   end
 
   # GET /posts/new

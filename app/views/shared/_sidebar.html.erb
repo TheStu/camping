@@ -1,9 +1,36 @@
 <div class="sidebar">
 	<h4>POPULAR POSTS</h4>
 
-	<h4>ONE DAY DEALS</h4>
+	<ul>
+		<% Post.most_popular.each do |post| %>
+			<li><%= link_to post.title, post %></li>
+		<% end %>
+	</ul>
+
+	<h4>COMPARE CAMPING GEAR</h4>
+
+	<ul>
+		<% Category.all.order(:name).each do |category| %>
+			<% if category.gears.count > 10 %>
+				<li><%= link_to "#{category.name} (#{category.gears.count})", category %></li>
+			<% end %>
+		<% end %>
+	</ul>
+
+	<h4>BLOG POST CATEGORIES</h4>
+
+	<ul>
+		<% PostCategory.all.order(:name).each do |category| %>
+			<li><%= link_to "#{category.name} (#{category.posts.count})", category %></li>
+		<% end %>
+	</ul>
 
 	<h4>ABOUT</h4>
+	<p>I'm Stu and this is Ten Pound Backpack, a website with more backpacking and camping gear info then you could ever possibly want to consume :) There's plenty here to explore, including the gear lists and the gear search, so take a look, click on some links and you'll find plenty of gems!</p>
 
 	<h4>CONTACT</h4>
+
+	<div class="well">
+		<p>Send email about anything and everything to: <strong>admin [at] tenpoundbackpack [dot] com</strong></p>
+	</div>
 </div>

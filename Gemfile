@@ -3,6 +3,12 @@ ruby "2.2.2"
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'pry', '~> 0.10.3'
+  gem 'minitest-rails-capybara', '~> 2.1.2'
+  gem 'minitest-reporters', '~> 1.1', '>= 1.1.10'
+  gem 'minitest-around', '~> 0.3.2'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'capybara-webkit', '~> 1.11', '>= 1.11.1'
 end
 
 group :production do

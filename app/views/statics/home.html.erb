@@ -2,21 +2,7 @@
 <% provide(:canonical, root_url) %>
 
 <div class="row">
-	<div class="col-lg-10 col-lg-offset-1 center home-cats">
-		<% Category.all.each do |category| %>
-			<% if category.gears.count > 10 %>
-				<div class="home-cat">
-					<%= link_to "#{category.name} (#{category.gears.count})", category %>
-				</div>
-			<% end %>
-		<% end %>
-		<hr>
-	</div>
-</div>
-
-
-<div class="row">
-	<div class="col-lg-8 col-lg-offset-1">
+	<div class="col-lg-7 col-lg-offset-1">
 		<%= render partial: 'shared/post', collection: @posts %>
 
 		<div class="center">
@@ -26,7 +12,7 @@
 		<br>
 	</div>
 
-	<div class="col-lg-2">
+	<div class="col-lg-3">
 		<%= render partial: 'shared/sidebar' %>
 	</div>
 </div>

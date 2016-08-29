@@ -1,4 +1,4 @@
-<div class="col-lg-8 col-lg-offset-1">
+<div class="col-lg-7 col-lg-offset-1">
   <div class="head-block">
     <h1><%= post.title %></h1>
     <div>
@@ -25,14 +25,43 @@
       <% end %>
     <% end %>
   </div>
-  <hr>
+  <hr class="hr-10">
+  <div class="well wp-content-well">
+    Is this your <b>first time here at Ten Pound Backpack?</b> Be sure to check out the <div class="btn-group dropdown"><a role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Gear Lists</a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <% Category.all.each do |category| %>
+      <% if category.gears.count > 10 %>
+        <li><%= link_to category.name, category_path(category) %></li>
+      <% end %>
+    <% end %>
+  </ul></div> to compare different camping and backpacking gear by weight and a few other features.
+  </div>
   <div class="wp-content" itemprop="articleBody">
     <%= post.formatted_content %>
+    <hr>
+  </div>
+  <div class="one-day-deals">
+    <h4>ONE DAY DEALS</h4>
+    <% deals = Dotd.all %>
+
+    <% if Dotd.present? %>
+      <% deals.each do |deal| %>
+        <a href="<%= deal.buy_url %>" class="one-deal">
+          <%= image_tag deal.thumb_image %>
+          <h5><%= deal.name.upcase %></h5>
+          <span class="deal-retail-price">$<%= deal.retail_price %></span> <span class="deal-sale-price">$<%= deal.sale_price %></span>
+          <br>
+          <span class="deal-percent-off">-<%= deal.percent_off %>% off!</span>
+        </a>
+      <% end %>
+    <% end %>
+    <br>
     <br>
     <br>
   </div>
 </div>
 
-<div class="col-lg-2">
+<div class="col-lg-3">
   <%= render partial: 'shared/sidebar' %>
 </div>

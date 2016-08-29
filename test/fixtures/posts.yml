@@ -1,23 +1,67 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
-  title: MyString
+  content: content one
+  title: title one
   thumbs_up: 1
   thumbs_down: 1
   large_image_url: MyString
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: MyString
+  category: one
 
 two:
-  content: MyText
-  title: MyString
+  content: content two
+  title: title two
   thumbs_up: 1
   thumbs_down: 1
   large_image_url: MyString
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: MyString
+  category: two
+
+three:
+  content: content three
+  title: title three
+  thumbs_up: 1
+  thumbs_down: 1
+  large_image_url: MyString
+  thumb_image_url: MyString
+  meta_title: MyString
+  meta_desc: MyString
+  category: three
+
+four:
+  content: content four
+  title: title four
+  thumbs_up: 1
+  thumbs_down: 1
+  large_image_url: MyString
+  thumb_image_url: MyString
+  meta_title: MyString
+  meta_desc: MyString
+  category: one
+
+five:
+  content: content five
+  title: title five
+  thumbs_up: 1
+  thumbs_down: 1
+  large_image_url: MyString
+  thumb_image_url: MyString
+  meta_title: MyString
+  meta_desc: MyString
+  category: two
+
+six:
+  content: content six
+  title: title six
+  thumbs_up: 1
+  thumbs_down: 1
+  large_image_url: MyString
+  thumb_image_url: MyString
+  meta_title: MyString
+  meta_desc: MyString
+  category: three

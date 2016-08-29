@@ -8,8 +8,10 @@
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 center">
-  	<%= form_tag search_path, method: 'get', id: 'search-form' do %>
-  	  <%= text_field_tag :q, params[:q] %>
+  	<%= form_tag search_path, method: 'get', class: 'form-inline inline-search-page' do %>
+      <div class="form-group">
+	      <%= text_field_tag :q, params[:q], class: 'form-control' %>
+      </div>
   	  <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
   	<% end %>
 	</div>
@@ -63,7 +65,7 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <div class="well center">
-        Oops, looks there aren't any results for that search term. Don't give up now though!
+        Oops, looks there aren't any results for that search term. Don't give up now though! Try searching for something else...
       </div>
     </div>
   </div>

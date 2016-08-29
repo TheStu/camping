@@ -27,7 +27,7 @@
 						<% gear.attributes.each do |attribute, value| %>
 							<% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
 								<% if attribute == 'name' %>
-									<td><%= link_to value, gear_path(gear) %></td>
+									<td><%= value %></td>
 								<% elsif attribute == 'weight' %>
 									<td class="gear-list-weight-td"><%= value.to_f / 1000 %></td>
 								<% elsif attribute == 'min_temp' %>

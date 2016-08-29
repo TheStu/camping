@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
+    ansi (1.5.0)
     arel (6.0.3)
     autoprefixer-rails (5.2.1.1)
       execjs
@@ -50,6 +52,17 @@ GEM
     byebug (5.0.0)
       columnize (= 0.9.0)
     cancancan (1.12.0)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
+    coderay (1.1.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -105,13 +118,37 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    minitest-around (0.3.2)
+      minitest (~> 5.0)
+    minitest-capybara (0.8.2)
+      capybara (~> 2.2)
+      minitest (~> 5.0)
+      rake
+    minitest-metadata (0.6.0)
+      minitest (>= 4.7, < 6.0)
+    minitest-rails (2.2.1)
+      minitest (~> 5.7)
+      railties (~> 4.1)
+    minitest-rails-capybara (2.1.2)
+      capybara (~> 2.7)
+      minitest-capybara (~> 0.8)
+      minitest-metadata (~> 0.6)
+      minitest-rails (~> 2.1)
+    minitest-reporters (1.1.11)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.2)
     multi_xml (0.5.5)
     nested_form (0.3.2)
@@ -121,6 +158,10 @@ GEM
       nokogiri
     orm_adapter (0.5.0)
     pg (0.18.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
@@ -175,6 +216,7 @@ GEM
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    ruby-progressbar (1.8.1)
     safe_yaml (1.0.4)
     sanitize (4.0.0)
       crass (~> 1.0.2)
@@ -193,6 +235,7 @@ GEM
     seed-fu (2.3.5)
       activerecord (>= 3.1, < 4.3)
       activesupport (>= 3.1, < 4.3)
+    slop (3.6.0)
     spring (1.3.6)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -222,6 +265,8 @@ GEM
     will_paginate (3.0.7)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -230,6 +275,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5.1)
   byebug
   cancancan (~> 1.12.0)
+  capybara-webkit (~> 1.11, >= 1.11.1)
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.1)
   exception_notification (~> 4.1.1)
@@ -238,8 +284,13 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-datatables-rails (~> 3.3.0)
   jquery-rails
+  launchy (~> 2.4, >= 2.4.3)
+  minitest-around (~> 0.3.2)
+  minitest-rails-capybara (~> 2.1.2)
+  minitest-reporters (~> 1.1, >= 1.1.10)
   nokogiri (~> 1.6.6.2)
   pg
+  pry (~> 0.10.3)
   rails (= 4.2.3)
   rails_12factor
   rails_admin (~> 0.6.8)
@@ -255,5 +306,8 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate-bootstrap (~> 1.0.1)
 
+RUBY VERSION
+   ruby 2.2.2p95
+
 BUNDLED WITH
-   1.10.4
+   1.12.5

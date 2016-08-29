@@ -2,7 +2,7 @@
 <% provide(:canonical, post_category_url(@post_category)) %>
 
 <div class="row">
-	<div class="col-lg-8 col-lg-offset-1">
+	<div class="col-lg-7 col-lg-offset-1">
 		<h1>'<%= @post_category.name %>' Post Category</h1>
 		<br>
 		<%= render partial: 'shared/post', collection: @posts %>
@@ -14,7 +14,7 @@
 		<br>
 	</div>
 
-	<div class="col-lg-2">
+	<div class="col-lg-3">
 		<%= render partial: 'shared/sidebar' %>
 	</div>
 </div>
