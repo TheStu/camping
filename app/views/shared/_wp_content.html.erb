@@ -17,7 +17,7 @@
       <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
       <%= post.thumbs_down %>
     </div>
-    <% if cannot? :edit, post %>
+    <% if can? :edit, post %>
       <% if post.class.name == 'Post' %>
         (<%= link_to "Edit", edit_post_path(post) %>)
       <% else %>
