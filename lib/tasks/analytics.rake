@@ -34,7 +34,7 @@ task :hardcode_links => :environment do
 
 	Page.all.each do |page|
 		['rei', 'campsaver', 'backcountry', 'ula-equipment', 'gossamergear'].each do |retailer|
-			results = page.content.scan(/<a href="(http:\/\/w*.?#{retailer}.com[\w\/-]+)"/)
+			results = page.content.scan(/<a href="(http:\/\/w*.?#{retailer}.com[\.\w\/-]+)"/)
 			if results.present?
 				unique_results = results.flatten.uniq
 				unique_results.each do |result|
@@ -48,7 +48,7 @@ task :hardcode_links => :environment do
 
 	Post.all.each do |page|
 		['rei', 'campsaver', 'backcountry', 'ula-equipment', 'gossamergear'].each do |retailer|
-			results = page.content.scan(/<a href="(http:\/\/w*.?#{retailer}.com[\w\/-]+)"/)
+			results = page.content.scan(/<a href="(http:\/\/w*.?#{retailer}.com[\.\w\/-]+)"/)
 			if results.present?
 				unique_results = results.flatten.uniq
 				unique_results.each do |result|
