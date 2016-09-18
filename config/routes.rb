@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/gear-lists/lightweight-tarp-tents' => redirect('/gear-lists/tarps')
   get '/gear-lists/tarp-tents' => redirect('/gear-lists/tarps')
 
-  resources :gears, except: [:index, :show], path: '/gear'
+  resources :gears, except: :index, path: '/gear'
   resources :merchant_categories, except: [:index, :show]
   resources :categories, except: :index, path: '/gear-lists'
 

@@ -13,6 +13,7 @@ class GearsController < ApplicationController
   # GET /gears/1
   # GET /gears/1.json
   def show
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   # GET /gears/new
