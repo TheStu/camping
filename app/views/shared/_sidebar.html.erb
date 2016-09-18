@@ -1,7 +1,7 @@
 <div class="sidebar">
 	<h4>POPULAR POSTS</h4>
 
-	<ul>
+	<ul class="menu-list">
 		<% Post.most_popular.each do |post| %>
 			<li><%= link_to post.title, post %></li>
 		<% end %>
@@ -9,7 +9,7 @@
 
 	<h4>COMPARE CAMPING GEAR</h4>
 
-	<ul>
+	<ul class="menu-list">
 		<% Category.all.order(:name).each do |category| %>
 			<% if category.gears.count > 10 %>
 				<li><%= link_to "#{category.name} (#{category.gears.count})", category %></li>
@@ -17,16 +17,26 @@
 		<% end %>
 	</ul>
 
+	<h4>ABOUT</h4>
+	My name is Stu, and this is Ten Pound Backpack, the focus of which is to help your backpack weigh less so that you can enjoy the outdoors more.<br><br>
+	The most important part of the website is the <div class="btn-group dropdown"><a role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Gear Lists</a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <% Category.all.each do |category| %>
+      <% if category.gears.count > 10 %>
+        <li><%= link_to category.name, category_path(category) %></li>
+      <% end %>
+    <% end %>
+  </ul></div>, but there's plenty more to help you find that perfect piece of backpacking gear.<br><br>
+	<p>As for me, I'm in the 20s, love backpacking and call BC, Canada home. I'm always happy to get emails if you want to know more.
+
 	<h4>BLOG POST CATEGORIES</h4>
 
-	<ul>
+	<ul class="menu-list">
 		<% PostCategory.all.order(:name).each do |category| %>
 			<li><%= link_to "#{category.name} (#{category.posts.count})", category %></li>
 		<% end %>
 	</ul>
-
-	<h4>ABOUT</h4>
-	<p>I'm Stu and this is Ten Pound Backpack, a website with more backpacking and camping gear info then you could ever possibly want to consume :) There's plenty here to explore, including the gear lists and the gear search, so take a look, click on some links and you'll find plenty of gems!</p>
 
 	<h4>CONTACT</h4>
 

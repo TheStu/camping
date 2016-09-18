@@ -1,31 +1,5 @@
 <div class="col-lg-6 col-lg-offset-2">
-  <div class="head-block">
-    <h1><%= post.title %></h1>
-    <div>
-      <%= image_tag post.user.gravatar_url, class: 'gravatar-img' %>
-      <div class="blog-meta">
-        <% if post.class.name == 'Post' %>
-          <i class="glyphicon glyphicon-tags"></i><%= link_to post.post_category.name, post.post_category %><br>
-          <hr>
-        <% end %>
-        <i class="glyphicon glyphicon-user"></i>Stuart
-      </div>
-    </div>
-    <div class="wp-thumbs">
-      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-      <%= post.thumbs_up %>
-      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-      <%= post.thumbs_down %>
-    </div>
-    <% if can? :edit, post %>
-      <% if post.class.name == 'Post' %>
-        (<%= link_to "Edit", edit_post_path(post) %>)
-      <% else %>
-        (<%= link_to "Edit", edit_page_path(post) %>)
-      <% end %>
-    <% end %>
-  </div>
-  <hr class="hr-10">
+
   <div class="well wp-content-well">
     Is this your <b>first time here at Ten Pound Backpack?</b> Be sure to check out the <div class="btn-group dropdown"><a role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Gear Lists</a>
@@ -37,6 +11,29 @@
     <% end %>
   </ul></div> to compare different camping and backpacking gear by weight and a few other features.
   </div>
+
+  <div class="head-block">
+    <h1><%= post.title %></h1>
+    <div class="blog-meta">
+      <% if post.class.name == 'Post' %>
+        <i class="glyphicon glyphicon-tags"></i><%= link_to post.post_category.name, post.post_category %> | 
+      <% end %>
+      <i class="glyphicon glyphicon-user"></i>Stuart | 
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      <%= post.thumbs_up %> | 
+      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+      <%= post.thumbs_down %>
+      <% if can? :edit, post %>
+        <% if post.class.name == 'Post' %>
+           | (<%= link_to "Edit", edit_post_path(post) %>)
+        <% else %>
+           | (<%= link_to "Edit", edit_page_path(post) %>)
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <hr class="hr-wp-content">
+  
   <div class="wp-content" itemprop="articleBody">
     <%= post.formatted_content %>
     <hr>
