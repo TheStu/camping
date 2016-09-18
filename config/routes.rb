@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'statics#home'
   # get 'about' => 'statics#about', as: 'about'
-  # get 'contact' => 'statics#contact', as: 'contact'
+  get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
