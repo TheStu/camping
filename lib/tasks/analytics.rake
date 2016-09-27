@@ -1,5 +1,31 @@
 # one time, add analytics tags to wp content
 
+task :itemprop => :environment do
+	Post.all.each do |page|
+		results = page.content.scan(/<img/)
+		if results.present?
+			unique_results = results.flatten.uniq
+			unique_results.each do |result|
+				replace_with = '<img itemprop="image"'
+				page.content = page.content.gsub(result, replace_with)
+			end
+		end
+		page.save
+	end
+
+	Page.all.each do |page|
+		results = page.content.scan(/<img/)
+		if results.present?
+			unique_results = results.flatten.uniq
+			unique_results.each do |result|
+				replace_with = '<img itemprop="image"'
+				page.content = page.content.gsub(result, replace_with)
+			end
+		end
+		page.save
+	end
+end
+
 task :wp_analytics => :environment do
 
 	Post.all.each do |post|

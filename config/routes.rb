@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get 'about' => 'statics#about', as: 'about'
   get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
+  get 'feed' => 'posts#feed'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

@@ -2,14 +2,16 @@
 <% provide(:desc, @post.meta_desc) %>
 <% content_for :canonical, post_url(@post) %>
 
-<div class="row" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="row" itemscope itemtype="http://schema.org/BlogPosting">
 
   <meta itemprop="datePublished" content="<%= @post.published_at %>">
+  <meta itemprop="dateModified" content="<%= @post.updated_at %>">
+  <link itemprop="mainEntityOfPage" href="<%= post_url @post %>">
   <meta itemprop="author" content="Stuart Morris">
 
   <%= render partial: 'shared/wp_content', locals: { post: @post } %>
 
-</div>
+</article>
 
 <script>
 /**
