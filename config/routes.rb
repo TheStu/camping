@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
   get 'feed' => 'posts#feed'
+  get '/sitemaps/sitemap.xml.gz' => redirect('https://s3.amazonaws.com/tpb-sitemap/sitemaps/sitemap.xml.gz')
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
