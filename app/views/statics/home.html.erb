@@ -3,8 +3,16 @@
 
 <div class="row">
 	<div class="col-lg-7 col-lg-offset-1">
+		<div class="well wp-content-well">
+			<div class="center home-h1">
+				<h1>Lightweight Backpacking Gear</h1>
+			</div>
+			<p>TenPoundBackpack is here to help you help you have the best possible time in the outdoors, whether you're camping, backpacking or just going hiking. We think a big part of that enjoyment comes from having the right, often lightweight backpacking and camping gear. After all, why carry a heavy tent on your back when you could carry a lightweight tent instead?</p>
+		</div>
+		<div class="home-h2">
+			<h2>Lightweight Backpacking Posts</h2>
+		</div>
 		<%= render partial: 'shared/post', collection: @posts %>
-
 		<div class="center">
 			<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 		</div>
