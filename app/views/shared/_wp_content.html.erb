@@ -20,9 +20,7 @@
       <% end %>
       <i class="glyphicon glyphicon-user"></i>Stuart | 
       <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-      <%= post.thumbs_up %> | 
-      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-      <%= post.thumbs_down %>
+      <%= post.thumbs_up %>
       <% if can? :edit, post %>
         <% if post.class.name == 'Post' %>
            | (<%= link_to "Edit", edit_post_path(post) %>)
