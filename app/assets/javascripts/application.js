@@ -18,4 +18,5 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.fixedHeader
 //= require turbolinks
+//= require bootsy
 //= require_tree .

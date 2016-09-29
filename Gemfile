@@ -52,6 +52,7 @@ gem 'friendly_id', '~> 5.1'
 gem 'sitemap_generator', '~> 5.2'
 gem 'carrierwave', '~> 0.11.2'
 gem 'fog-aws', '~> 0.10.0'
+gem 'bootsy', '~> 2.3'
 
 
 # Use ActiveModel has_secure_password
