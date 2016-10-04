@@ -21,13 +21,13 @@
     <%= f.bootsy_area :content, class: 'form-control', rows: 20 %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :post_category_id %>
-    <%= f.collection_select :post_category_id, PostCategory.all.order(:name), :id, :name, {}, class: 'form-control' %>
-  </div>
-
   <div class="row">
     <div class="col-lg-6">
+
+      <div class="field form-group">
+        <%= f.label :post_category_id %>
+        <%= f.collection_select :post_category_id, PostCategory.all.order(:name), :id, :name, {}, class: 'form-control' %>
+      </div>
 
       <div class="field form-group">
         <%= f.label :large_image_url %><br>
@@ -39,18 +39,24 @@
         <%= f.text_field :meta_title, class: 'form-control' %>
       </div>
 
-    </div>
-    <div class="col-lg-6">
-
       <div class="field form-group">
         <%= f.label :thumb_image_url %><br>
         <%= f.text_field :thumb_image_url, class: 'form-control' %>
       </div>
 
-
       <div class="field form-group">
         <%= f.label :meta_desc %><br>
         <%= f.text_field :meta_desc, class: 'form-control' %>
+      </div>
+
+    </div>
+    <div class="col-lg-6">
+
+      <div class="field form-group post-form-recommendations">
+        <h5>Recommended Gear (3)</h5>
+        <%= f.collection_check_boxes(:recommendation_ids, Recommendation.all, :id, :title, class: 'form-control') do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>
       </div>
 
     </div>

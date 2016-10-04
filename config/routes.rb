@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :recommendations
   root 'statics#home'
   # get 'about' => 'statics#about', as: 'about'
   get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
   get 'feed' => 'posts#feed'
+  get 'avantlink_search' => 'statics#avantlink_search'
   get '/sitemaps/sitemap.xml.gz' => redirect('https://s3.amazonaws.com/tpb-uploads/sitemaps/sitemap.xml.gz')
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

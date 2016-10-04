@@ -1,0 +1,66 @@
+<%= form_tag avantlink_search_path, method: 'get', target: '_blank', class: 'form-inline av-search-form' do %>
+  <div class="form-group">
+    <%= text_field_tag :q, params[:q], { class: 'form-control', placeholder: 'Avantlink Search' } %>
+  </div>
+  <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
+<% end %>
+
+<%= form_for(@recommendation) do |f| %>
+  <% if @recommendation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recommendation.errors.count, "error") %> prohibited this recommendation from being saved:</h2>
+
+      <ul>
+      <% @recommendation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="field form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :url %><br>
+        <%= f.text_field :url, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :retailer %><br>
+        <%= f.select :retailer, Recommendation.retailers, { include_blank: true }, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :picture_url %><br>
+        <%= f.text_field :picture_url, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :post_category_id %>
+        <%= f.collection_select :post_category_id, PostCategory.all.order(:name), :id, :name, {}, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field form-group">
+        <%= f.label :feature_one %><br>
+        <%= f.text_field :feature_one, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :feature_two %><br>
+        <%= f.text_field :feature_two, class: 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :feature_three %><br>
+        <%= f.text_field :feature_three, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary btn-lg btn-block' %>
+  </div>
+<% end %>
+
+<br>
+<br>
+<br>

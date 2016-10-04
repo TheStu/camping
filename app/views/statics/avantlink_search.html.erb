@@ -1,0 +1,71 @@
+<% provide(:title, 'Avantlink Search') %>
+
+<div class="row">
+	<div class="col-lg-12 search-title">
+	  <h1>Avantlink Search</h1>
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 center">
+  	<%= form_tag avantlink_search_path, method: 'get', class: 'form-inline inline-search-page' do %>
+      <div class="form-group">
+	      <%= text_field_tag :q, params[:q], class: 'form-control' %>
+      </div>
+  	  <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
+  	<% end %>
+	</div>
+</div>
+
+<% if @results.present? %>
+
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+     	<table class="results-table">
+     	  <% @results.each do |result| %>
+     	    <tr class="result">
+
+     	      <td class="picture-td">
+              <p><b><%= merch_name(result).upcase %></b></p>
+   	          <% if result['Thumbnail_Image'].present? %>
+   	            <%= link_to image_tag(result['Thumbnail_Image'], alt: "#{pretty_name(result)}", class: 'results-image'), result['Buy_URL'], rel: 'nofollow', target: '_blank', onclick: "trackOutboundLink('#{result['Buy_URL']}'); return false;" %>
+   	          <% else %>
+   	            <%= image_tag 'default.jpg', alt: "#{pretty_name(result)}", class: 'results-image' %>
+   	          <% end %>
+     	      </td>
+
+     	      <td class="info-td">
+              <div>
+                <label for="buy_url">Buy URL</label><br>
+                <input onfocus="this.select();" onmouseup="return false;" class="form-control av-search-input" type="text" name="" id="buy_url" value="<%= result['Buy_URL'] %>">
+              </div>
+              <div>
+                <label for="title">Title</label><br>
+                <input onfocus="this.select();" onmouseup="return false;" class="form-control av-search-input" type="text" name="" id="title" value="<%= pretty_name(result) %>">
+              </div>
+              <div>
+                <label for="medium_image">Medium IMG</label><br>
+                <input onfocus="this.select();" onmouseup="return false;" class="form-control av-search-input" type="text" name="" id="medium_image" value="<%= result['Medium_Image'] %>">
+              </div>
+              <div>
+                <label for="large_image">Large IMG</label><br>
+                <input onfocus="this.select();" onmouseup="return false;" class="form-control av-search-input" type="text" name="" id="large_image" value="<%= result['Large_Image'] %>">
+              </div>
+     	      </td>
+     	    </tr>
+     	  <% end %>
+     	</table>
+    </div>  
+  </div>
+
+<% else %>
+
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="well center">
+        Oops, looks there aren't any results for that search term. Don't give up now though! Try searching for something else...
+      </div>
+    </div>
+  </div>
+
+<% end %>

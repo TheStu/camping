@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recommendation.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @recommendation.url %>
+</p>
+
+<p>
+  <strong>Picture url:</strong>
+  <%= @recommendation.picture_url %>
+</p>
+
+<p>
+  <strong>Feature one:</strong>
+  <%= @recommendation.feature_one %>
+</p>
+
+<p>
+  <strong>Feature two:</strong>
+  <%= @recommendation.feature_two %>
+</p>
+
+<p>
+  <strong>Feature three:</strong>
+  <%= @recommendation.feature_three %>
+</p>
+
+<%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |
+<%= link_to 'Back', recommendations_path %>
