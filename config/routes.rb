@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'search' => 'statics#search', as: 'search'
   get 'feed' => 'posts#feed'
   get 'avantlink_search' => 'statics#avantlink_search'
-  get '/sitemaps/sitemap.xml.gz' => redirect('https://s3.amazonaws.com/tpb-uploads/sitemaps/sitemap.xml.gz')
+  get '/sitemaps/sitemap.xml.gz' => redirect('https://tpb-uploads.s3.amazonaws.com/sitemaps/sitemap.xml.gz')
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
