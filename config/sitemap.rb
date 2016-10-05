@@ -1,7 +1,7 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.tenpoundbackpack.com"
 
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3.amazonaws.com/tpb-sitemap/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://tpb-uploads.s3.amazonaws.com/"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
