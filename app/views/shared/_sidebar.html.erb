@@ -36,7 +36,6 @@
 		<% PostCategory.all.order(:name).each do |category| %>
 			<li><%= link_to "#{category.name} (#{category.posts.count})", category %></li>
 		<% end %>
-		<li><%= link_to 'remove', remove_path %></li>
 	</ul>
 
 	<h4>CONTACT</h4>
