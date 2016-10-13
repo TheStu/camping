@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # get 'about' => 'statics#about', as: 'about'
   get 'contact' => 'statics#contact', as: 'contact'
   get 'search' => 'statics#search', as: 'search'
-  get 'remove' => 'statics#remove'
   get 'feed' => 'posts#feed'
   get 'avantlink_search' => 'statics#avantlink_search'
   get '/sitemaps/sitemap.xml.gz' => redirect('https://tpb-uploads.s3.amazonaws.com/sitemaps/sitemap.xml.gz')

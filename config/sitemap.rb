@@ -31,7 +31,6 @@ SitemapGenerator::Sitemap.create do
   #   end
   add '/contact'
   add '/camping-articles'
-  add '/remove', :priority => 1
 
   PostCategory.find_each do |post_category|
     add post_category_path(post_category)
@@ -47,5 +46,9 @@ SitemapGenerator::Sitemap.create do
 
   Page.find_each do |page|
     add page_path(page), lastmod: page.updated_at
+  end
+
+  Gear.find_each do |gear|
+    add gear_path(gear), priority: 0.9
   end
 end

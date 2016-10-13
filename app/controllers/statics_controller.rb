@@ -30,8 +30,5 @@ class StaticsController < ApplicationController
     results = Nokogiri::XML(open(url))
     my_hash = results.search('//Table1').map{ |e| Hash.from_xml(e.to_xml)['Table1'] }
   end
-
-  def remove
-  end
 end
 
