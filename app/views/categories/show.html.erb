@@ -13,7 +13,7 @@
 			<thead>
 				<tr>
 					<% @category.gears.first.attributes.each do |attribute, value| %>
-						<% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
+						<% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'large_image_url', 'last_picture_search', 'price_url'].include?(attribute) || !value.present? %>
 							<th><%= attribute.gsub('gear_', '').titleize %></th>
 						<% end %>
 					<% end %>
