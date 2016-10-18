@@ -25,7 +25,7 @@
 				<% @category.gears.each do |gear| %>
 					<tr>
 						<% gear.attributes.each do |attribute, value| %>
-							<% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'large_image_url', 'last_picture_search'].include?(attribute) || !value.present? %>
+							<% unless ['id', 'created_at', 'updated_at', 'category_id', 'is_api_searchable', 'large_image_url', 'last_picture_search', 'price_url'].include?(attribute) || !value.present? %>
 								<% if attribute == 'name' %>
 									<td><%= value %></td>
 								<% elsif attribute == 'weight' %>
@@ -41,7 +41,11 @@
 								<% end %>
 							<% end %>
 						<% end %>
-						<td><%= link_to "Show Price", search_path(q: gear.name) %></td>
+						<% if gear.price_url.present? %>
+							<td><%= link_to "Show Price", gear.price_url, target: '_blank', rel: 'nofollow' %></td>
+						<% else %>
+							<td><%= link_to "Show Price", search_path(q: gear.name) %></td>
+						<% end %>
 					</tr>
 				<% end %>
 			</tbody>
