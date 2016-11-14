@@ -17,3 +17,5 @@
 /tmp
 /no_git
 todo.txt
+# Ignore application configuration
+/config/application.yml
