@@ -11,7 +11,7 @@
     <p class="index-meta"><i class="glyphicon glyphicon-user"></i>By Stuart</p>
     <p class="index-meta"><i class="glyphicon glyphicon-tags"></i><%= link_to post.post_category.name, post.post_category %></p>
     <div class="index-text">
-      <%= truncate_html(index_scrub(post.content), :length => 250, :omission => "...").html_safe %>
+      <%= truncate(strip_tags(post.content), :length => 250, :omission => "...").html_safe %>
     </div>
     <%= link_to "Read More <i class=\"glyphicon glyphicon-arrow-right glyphicon-white\"></i>".html_safe, post, class: 'btn btn-danger read-more-btn' %>
   </div>

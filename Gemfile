@@ -9,6 +9,7 @@ group :development, :test do
   gem 'minitest-around', '~> 0.3.2'
   gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'capybara-webkit', '~> 1.11', '>= 1.11.1'
+  gem 'derailed_benchmarks'
   gem 'figaro', '~> 1.1', '>= 1.1.1'
 end
 
@@ -46,7 +47,6 @@ gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'nokogiri', '~> 1.6.6.2'
 gem 'gibbon', '~> 1.2.0'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
-gem 'truncate_html', '~> 0.9.3'
 gem 'sanitize', '~> 4.0.0'
 gem 'exception_notification', '~> 4.1.1'
 gem 'friendly_id', '~> 5.1'
