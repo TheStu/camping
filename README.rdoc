@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 2.2.2 / Rails 4.2.3
 
-Things you may want to cover:
+Requires ENV variables:
 
-* Ruby version
+* AWS_ACCESS_KEY_ID
+* AWS_SECRET_ACCESS_KEY
+* GIBBON_API_KEY
+* EMAIL_PASSWORD
 
-* System dependencies
+TenPoundBackpack is a backpacking and camping gear focused website that has been around since 2012 and has gone through several iterations, this being the latest one. There's a lot of content, but the main feature of the site is the gear lists, i.e - [www.tenpoundbackpack.com/gear-lists/sleeping-bags](www.tenpoundbackpack.com/gear-lists/sleeping-bags).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Tests are partially broken due to ugly legacy routes left over from Wordpress days :( Still troubleshooting.
