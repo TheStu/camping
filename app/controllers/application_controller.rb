@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter :check_domain
+  #before_filter :check_domain
 
   def check_domain
     if Rails.env.production? and request.host.downcase != 'www.tenpoundbackpack.com'
