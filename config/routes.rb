@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'avantlink_search' => 'statics#avantlink_search'
   get '/sitemaps/sitemap.xml.gz' => redirect('https://tpb-uploads.s3.amazonaws.com/sitemaps/sitemap.xml.gz')
   get '/.well-known/acme-challenge/uFrIeBWh7Jo1N5fqRv6LctBJI8ep_5jc38Iy2iHBA3E', to: 'statics#letsencrypt_no_www'
-  get '/.well-known/acme-challenge/0xEhkHwwbJ5AruKj63Xv1jdW0Ye4MU2tet8pMywTzN8', to: 'statics#letsencrypt_www'
+  get '/.well-known/acme-challenge/cxBzAdqtI347UCARCXPIFcLGvjeePHTPaoArKiVsuO0', to: 'statics#letsencrypt_www'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
