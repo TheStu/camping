@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
   belongs_to :post_category
   has_and_belongs_to_many :recommendations
 
+  validates_presence_of :title, :content, :post_category, :large_image_url, :meta_title, :thumb_image_url, :meta_desc 
+
   def to_param
     "#{title.parameterize}"
   end

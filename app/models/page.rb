@@ -1,5 +1,7 @@
 class Page < ActiveRecord::Base
 
+  #validates_presence_of :content, :title, :large_image_url, :thumb_image_url, :meta_title, :meta_desc
+
 	def to_param
     "#{title.parameterize}"
   end

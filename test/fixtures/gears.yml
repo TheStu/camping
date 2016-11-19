@@ -34,9 +34,9 @@ one:
   canopy: MyString
   rainfly: MyString
   add_warmth: MyString
-  non-stick: MyString
+  non_stick: MyString
   blade_length: 1
-  multi-tool: MyString
+  multi_tool: MyString
   declination: MyString
   sighting_mirror: MyString
   global_needle: MyString
@@ -81,9 +81,9 @@ two:
   canopy: MyString
   rainfly: MyString
   add_warmth: MyString
-  non-stick: MyString
+  non_stick: MyString
   blade_length: 1
-  multi-tool: MyString
+  multi_tool: MyString
   declination: MyString
   sighting_mirror: MyString
   global_needle: MyString

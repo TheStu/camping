@@ -9,7 +9,7 @@ one:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: one
+  post_category: one
 
 two:
   content: content two
@@ -20,7 +20,7 @@ two:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: two
+  post_category: two
 
 three:
   content: content three
@@ -31,7 +31,7 @@ three:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: three
+  post_category: three
 
 four:
   content: content four
@@ -42,7 +42,7 @@ four:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: one
+  post_category: one
 
 five:
   content: content five
@@ -53,7 +53,7 @@ five:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: two
+  post_category: two
 
 six:
   content: content six
@@ -64,4 +64,4 @@ six:
   thumb_image_url: MyString
   meta_title: MyString
   meta_desc: MyString
-  category: three
+  post_category: three

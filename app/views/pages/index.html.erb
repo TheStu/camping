@@ -19,56 +19,56 @@
   <div class="col-lg-4 center">
     <h2>Backpacks</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(280, 768, 522, 438, 464, 478, 606, 790) %>
+      <%= render partial: 'page', collection: Page.where(id: [280, 768, 522, 438, 464, 478, 606, 790]) %>
     </ul>
 
     <h2>Food and Drink</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(310, 312, 74, 430, 505, 509) %>
+      <%= render partial: 'page', collection: Page.where(id: [310, 312, 74, 430, 505, 509]) %>
     </ul>
 
     <h2>Technology</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(526, 759, 779) %>
+      <%= render partial: 'page', collection: Page.where(id: [526, 759, 779]) %>
     </ul>
 
     <h2>Other</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(723, 840, 736, 837, 729, 417, 721, 421, 697, 732, 734) %>
+      <%= render partial: 'page', collection: Page.where(id: [723, 840, 736, 837, 729, 417, 721, 421, 697, 732, 734]) %>
     </ul>
   </div>
 
   <div class="col-lg-4 center">
     <h2>Sleeping</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(278, 301, 366, 432, 482, 512, 615, 784, 874) %>
+      <%= render partial: 'page', collection: Page.where(id: [278, 301, 366, 432, 482, 512, 615, 784, 874]) %>
     </ul>
 
     <h2>Clothing</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(741, 776, 745, 752, 756, 764, 766, 781) %>
+      <%= render partial: 'page', collection: Page.where(id: [741, 776, 745, 752, 756, 764, 766, 781]) %>
     </ul>
 
     <h2>Winter</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(620, 624, 664, 637, 629, 677, 651, 669, 461, 712, 719, 655, 632, 703, 647, 674, 660, 681, 708, 715, 717, 701, 706) %>
+      <%= render partial: 'page', collection: Page.where(id: [620, 624, 664, 637, 629, 677, 651, 669, 461, 712, 719, 655, 632, 703, 647, 674, 660, 681, 708, 715, 717, 701, 706]) %>
     </ul>
   </div>
 
   <div class="col-lg-4 center">
     <h2>Shelters</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(275, 557, 319, 353, 434, 457, 488, 497, 514, 552, 575, 599, 747, 786) %>
+      <%= render partial: 'page', collection: Page.where(id: [275, 557, 319, 353, 434, 457, 488, 497, 514, 552, 575, 599, 747, 786]) %>
     </ul>
 
     <h2>Other Gear</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(322, 518, 532, 560, 565, 578, 584, 588, 592) %>
+      <%= render partial: 'page', collection: Page.where(id: [322, 518, 532, 560, 565, 578, 584, 588, 592]) %>
     </ul>
 
     <h2>Feet</h2>
     <ul class="page-index-ul">
-      <%= render partial: 'page', collection: Page.find(370, 771, 442, 452, 500, 572) %>
+      <%= render partial: 'page', collection: Page.where(id: [370, 771, 442, 452, 500, 572]) %>
     </ul>
   </div>
 </div>

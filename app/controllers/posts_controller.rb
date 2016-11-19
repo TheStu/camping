@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!, except: [:show, :index, :feed]
-  load_and_authorize_resource except: :feed
+  authorize_resource except: :feed
 
   def feed
     @posts = Post.all.order('published_at DESC')

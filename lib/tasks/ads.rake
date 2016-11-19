@@ -14,8 +14,7 @@ task :reload_dotd_data => :environment do
 
   datafeed_urls.each do |url|
     data = Nokogiri::XML(open(url))
-
-    entry = Dotd.create(name: name(data.xpath('//Product_Name').text, data.xpath('//Brand').text),
+    entry = Dotd.create(name: build_name(data.xpath('//Product_Name').text, data.xpath('//Brand').text),
                         retail_price: data.xpath('//Retail_Price').text,
                         sale_price: data.xpath('//Sale_Price').text,
                         thumb_image: data.xpath('//Small_Image_URL').text,
@@ -26,6 +25,6 @@ task :reload_dotd_data => :environment do
 
 end
 
-def name(name, brand)
+def build_name(name, brand)
   name.downcase.include?(brand.downcase) ? name : brand + ' ' + name
 end

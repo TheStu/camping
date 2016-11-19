@@ -7,14 +7,9 @@ require 'minitest/reporters'
 
 # WebMock.allow_net_connect!
 
-Capybara.javascript_driver = :webkit
+# Capybara.javascript_driver = :webkit
 reporter_options = { color: true }
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_options)]
-
-Capybara::Webkit.configure do |config|
-  config.block_unknown_urls
-  #config.allow_url("*.stripe.com/*")
-end
 
 #Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 

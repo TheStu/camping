@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20161018201010) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id"
     t.string   "bootsy_resource_type"
@@ -56,10 +53,10 @@ ActiveRecord::Schema.define(version: 20161018201010) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "gears", force: :cascade do |t|
     t.integer  "category_id"
@@ -114,7 +111,7 @@ ActiveRecord::Schema.define(version: 20161018201010) do
     t.string   "price_url"
   end
 
-  add_index "gears", ["category_id"], name: "index_gears_on_category_id", using: :btree
+  add_index "gears", ["category_id"], name: "index_gears_on_category_id"
 
   create_table "merchant_categories", force: :cascade do |t|
     t.integer  "category_id"
@@ -144,7 +141,7 @@ ActiveRecord::Schema.define(version: 20161018201010) do
     t.string   "slug"
   end
 
-  add_index "post_categories", ["slug"], name: "index_post_categories_on_slug", unique: true, using: :btree
+  add_index "post_categories", ["slug"], name: "index_post_categories_on_slug", unique: true
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -165,15 +162,15 @@ ActiveRecord::Schema.define(version: 20161018201010) do
     t.integer  "view_count",       default: 0
   end
 
-  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
 
   create_table "posts_recommendations", id: false, force: :cascade do |t|
     t.integer "post_id",           null: false
     t.integer "recommendation_id", null: false
   end
 
-  add_index "posts_recommendations", ["post_id", "recommendation_id"], name: "index_posts_recommendations_on_post_id_and_recommendation_id", using: :btree
-  add_index "posts_recommendations", ["recommendation_id", "post_id"], name: "index_posts_recommendations_on_recommendation_id_and_post_id", using: :btree
+  add_index "posts_recommendations", ["post_id", "recommendation_id"], name: "index_posts_recommendations_on_post_id_and_recommendation_id"
+  add_index "posts_recommendations", ["recommendation_id", "post_id"], name: "index_posts_recommendations_on_recommendation_id_and_post_id"
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "title"
@@ -203,7 +200,7 @@ ActiveRecord::Schema.define(version: 20161018201010) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
