@@ -94,7 +94,6 @@ Rails.application.configure do
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   ignore_exceptions:    ['CanCan::AccessDenied'] + ExceptionNotifier.ignored_exceptions,  #ignores cancan AccessDenied errors
   ignore_crawlers:      %w{Googlebot bingbot},
-  ignore_if: ->(env, exception) { exception.message =~ /:formats=>[:png]/ },
   :email => {
     :deliver_with => :deliver,
     :email_prefix => "[TPB ERROR] ",
