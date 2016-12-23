@@ -34,9 +34,8 @@ Rails.application.routes.draw do
   get '/index/page' => redirect('/camping-articles')
   get '/camping-articles', to: 'pages#index', as: 'pages'
 
-
   resources :posts
-  resources :pages, only: [:edit, :show, :update], path: ''
+  resources :pages, only: [:edit, :show, :update], path: '', constraints: { format: 'html' } #lambda { |req| !['php', 'jsp', 'asp', 'htm', 'html'].include?(req) }
   resources :post_categories, except: :index, path: 'post-category'
 
   get '/index/post', to: redirect('/')
