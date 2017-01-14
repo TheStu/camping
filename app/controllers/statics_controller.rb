@@ -11,7 +11,7 @@ class StaticsController < ApplicationController
   end
 
   def home
-    @posts = Post.order('published_at DESC').paginate(:page => params[:page], :per_page => 10)
+    @posts = Post.order('published_at DESC').paginate(:page => params[:page], :per_page => 5)
   end
 
   def about

@@ -29,7 +29,6 @@ Rails.application.configure do
   config.assets.css_compressor = :sass
 
   # heroku_rails_deflate
-  config.serve_static_assets = true
   config.assets.compress = true
   config.assets.compile = true
   config.assets.digest = true
