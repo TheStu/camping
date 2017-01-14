@@ -2,6 +2,7 @@ $font-family-base: "freight-text-pro", Georgia, Cambria, "Times New Roman", Time
 $font-size-base: 22px;
 $line-height-base: 1.5;
 @import "bootstrap-sprockets";
+@import 'bootstrap-custom';
 @import "bootstrap";
 @import "dataTables/jquery.dataTables";
 @import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
