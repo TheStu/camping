@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'feed' => 'posts#feed'
   get 'avantlink_search' => 'statics#avantlink_search'
   get '/sitemaps/sitemap.xml.gz' => redirect('https://tpb-uploads.s3.amazonaws.com/sitemaps/sitemap.xml.gz')
-  get '/.well-known/acme-challenge/JXzAI-A57AbK3quMGLxaZIJsDJN1sEQZTWI07HsNbM0', to: 'statics#letsencrypt_no_www'
+  get '/.well-known/acme-challenge/pustHSam86rgF4cOxm6J7sO03rpabrmIti1L3aO5Xjs', to: 'statics#letsencrypt_no_www'
   get '/.well-known/acme-challenge/6vDWxSVCB2URcmH92C3u51VH9z5iNAbTgLzgMcFqEtE', to: 'statics#letsencrypt_www'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
