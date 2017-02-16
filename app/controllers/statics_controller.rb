@@ -25,7 +25,7 @@ class StaticsController < ApplicationController
   end
 
   def letsencrypt_www # remember to comment out the www redirect in application controller!
-    render text: "6vDWxSVCB2URcmH92C3u51VH9z5iNAbTgLzgMcFqEtE.XCgycz6g6eKHuQ21uohT7J6gas_U0-LZ59HN4CWLWdw"
+    render text: "64j0iP6uLxNrIFG_KgCNRlTIetHkBTLsCxRm1_cFFQU.XCgycz6g6eKHuQ21uohT7J6gas_U0-LZ59HN4CWLWdw"
   end
 
   private 
