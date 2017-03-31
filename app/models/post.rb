@@ -50,7 +50,7 @@ class Post < ActiveRecord::Base
     a_five = []
     recommendations.each { |r| a_five << "<td>#{ r.feature_three }</td>" }
     a_six = []
-    recommendations.each { |r| a_six << "<td><a class='btn btn-xs btn-danger' target='_blank' rel='nofollow' href=#{ r.url }>See Price and Reviews</a></td>" }
+    recommendations.each { |r| a_six << "<td><a class='btn btn-xs btn-primary' target='_blank' rel='nofollow' href=#{ r.url }>See Price and Reviews</a></td>" }
     open = "<table class='recommend-table'>"
     close = "</table>"
     one = "<tr>" + a_one.join + "</tr>"

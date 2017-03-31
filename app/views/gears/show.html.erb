@@ -7,7 +7,7 @@
     <h1><%= @gear.name %></h1>
     ( <%= link_to @gear.category.name, @gear.category %> )
     <br>
-    <%= link_to "See Price", search_path(q: @gear.name), { class: 'btn btn-danger', role: 'button'} %>
+    <%= link_to "See Price", search_path(q: @gear.name), { class: 'btn btn-primary', role: 'button'} %>
   </div>
 </div>  
 
@@ -48,7 +48,7 @@
     <div class="well">
       The <%= @gear.name %> really is a great <%= @gear.category.name.singularize.downcase %>, there's no doubting that, but just in case you're not 100% set on it yet, we've got a whole bunch of other <%= @gear.category.name.downcase %> that you can find out more about using our super fancy interface. You never know, you might find something even better than the <%= @gear.name %> ... but probably not, it's kind of awesome!
       <div class="gear-well-btn">
-        <%= link_to "Take Me To The #{@gear.category.name}!", category_path(@gear.category), class: "btn btn-danger", role: 'button' %>
+        <%= link_to "Take Me To The #{@gear.category.name}!", category_path(@gear.category), class: "btn btn-primary", role: 'button' %>
       </div>
     </div>
   </div>

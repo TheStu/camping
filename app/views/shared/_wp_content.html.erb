@@ -1,58 +1,42 @@
-<div class="col-lg-6 col-lg-offset-3">
+<div class="col-sm-7 col-xs-12 col-sm-offset-1">
 
-  <div class="well wp-content-well">
-    Is this your <b>first time here at Ten Pound Backpack?</b> Be sure to check out the <div class="btn-group dropdown"><a role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Gear Lists</a>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <% Category.all.each do |category| %>
-      <% if category.gears.count > 10 %>
-        <li><%= link_to category.name, category_path(category) %></li>
-      <% end %>
-    <% end %>
-  </ul></div> to compare different camping and backpacking gear by weight and a few other features.
-  </div>
-
-  <div class="head-block">
-    <h1 itemprop="headline"><%= post.title %></h1>
-    <div class="blog-meta">
-      <% if post.class.name == 'Post' %>
-        <i class="glyphicon glyphicon-tags"></i><%= link_to post.post_category.name, post.post_category %> | 
-      <% end %>
-      <i class="glyphicon glyphicon-user"></i>Stuart | 
-      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-      <%= post.thumbs_up %>
-      <% if can? :edit, post %>
-        <% if post.class.name == 'Post' %>
-           | (<%= link_to "Edit", edit_post_path(post) %>)
-        <% else %>
-           | (<%= link_to "Edit", edit_page_path(post) %>)
+  <div class="wp-content-container">
+    <div class="post-title">
+      <%= image_tag 'wp-me.jpg', alt: 'Stuart in the Mountains', class: 'wp-pic' %>
+      <div class="post-info">
+        <h1 itemprop="headline"><%= post.title %></h1>
+        <p class="post-meta"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> By Stuart Morris</p>
+        <% if post.class.name == "Post" %>
+          <p class="post-meta"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= link_to post.post_category.name, post.post_category %></p>
         <% end %>
-      <% end %>
+      </div>
+      <div class="wp-thumb-votes">
+        <span class="thumb-el"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></span>
+        <span class="thumb-el"><%= post.thumbs_up %></span>
+        <span class="thumb-el"> | </span>
+        <span class="thumb-el"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></span>
+        <span class="thumb-el"><%= post.thumbs_down %></span>
+      </div>
     </div>
-  </div>
-  <hr class="hr-wp-content">
-  
-  <div class="wp-content" itemprop="articleBody">
-    <%= post.formatted_content %>
-    <hr>
-  </div>
-  <div class="one-day-deals">
-    <h4>ONE DAY DEALS</h4>
-    <% deals = Dotd.all %>
 
-    <% if Dotd.present? %>
-      <% deals.each do |deal| %>
-        <a href="<%= deal.buy_url %>" class="one-deal">
-          <%= image_tag deal.thumb_image %>
-          <h5><%= deal.name.upcase %></h5>
-          <span class="deal-retail-price">$<%= deal.retail_price %></span> <span class="deal-sale-price">$<%= deal.sale_price %></span>
-          <br>
-          <span class="deal-percent-off">-<%= deal.percent_off %>% off!</span>
-        </a>
-      <% end %>
+    <% if post.class.name == "Post" && [1, 2, 6, 9, 10, 11, 14].include?(post.post_category_id.to_i) %>
+      <div class="well">
+        <%= link_to "Compare", category_path(post.post_category) %> the <b><%= Category.find_by_name(post.post_category.name).gears.count %> <%= post.post_category.name %></b> on Ten Pound Backpack based on their weight, price and a few more features as well.
+      </div>
     <% end %>
-    <br>
-    <br>
-    <br>
+    <div class="wp-content" itemprop="articleBody">
+      <%= post.formatted_content %>
+    </div>
+
   </div>
+
+
+  <!-- ////////////////////////////////////////////////////////// -->
+
+
+  
+</div>
+
+<div class="col-sm-3 xs-hidden">
+  <%= render 'shared/sidebar' %>
 </div>

@@ -1,11 +1,15 @@
 <div class="sidebar">
 	<h4>POPULAR POSTS</h4>
 
-	<ul class="menu-list">
-		<% Post.most_popular.each do |post| %>
-			<li><%= link_to post.title, post %></li>
-		<% end %>
-	</ul>
+	<% Post.most_popular.each do |post| %>
+		<a href="<%= post_path(post) %>" class="sidebar-popular" >
+      <%= image_tag "/assets/#{post.thumb_image_url}" %> 
+      <span class="sidebar-title"><%= post.title %></span><br>
+      <span class="sidebar-meta"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Stuart Morris</span><br>
+      <span class="sidebar-meta"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></span><span class="sidebar-meta"> <%= post.thumbs_up %></span><span class="sidebar-meta"> | </span>
+      <span class="sidebar-meta"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></span><span class="sidebar-meta"> <%= post.thumbs_down %></span>
+    </a>
+	<% end %>
 
 	<h4>COMPARE CAMPING GEAR</h4>
 
@@ -17,19 +21,6 @@
 		<% end %>
 	</ul>
 
-	<h4>ABOUT</h4>
-	My name is Stu, and this is Ten Pound Backpack, the focus of which is to help your backpack weigh less so that you can enjoy the outdoors more.<br><br>
-	The most important part of the website is the <div class="btn-group dropdown"><a role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Gear Lists</a>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <% Category.all.each do |category| %>
-      <% if category.gears.count > 10 %>
-        <li><%= link_to category.name, category_path(category) %></li>
-      <% end %>
-    <% end %>
-  </ul></div>, but there's plenty more to help you find that perfect piece of backpacking gear.<br><br>
-	<p>As for me, I'm in the 20s, love backpacking and call BC, Canada home. I'm always happy to get emails if you want to know more.
-
 	<h4>BLOG POST CATEGORIES</h4>
 
 	<ul class="menu-list">
@@ -37,7 +28,4 @@
 			<li><%= link_to "#{category.name} (#{category.posts.count})", category %></li>
 		<% end %>
 	</ul>
-
-	<h4>CONTACT</h4>
-	<%= link_to "Contact Us", contact_path %>
 </div>

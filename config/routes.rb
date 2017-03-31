@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'statics#home'
   # get 'about' => 'statics#about', as: 'about'
   get 'contact' => 'statics#contact', as: 'contact'
+  get 'about' => 'statics#about', as: 'about'
   get 'search' => 'statics#search', as: 'search'
   get 'feed' => 'posts#feed'
   get 'avantlink_search' => 'statics#avantlink_search'

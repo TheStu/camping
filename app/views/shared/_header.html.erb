@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to image_tag('reverse_logo.png'), root_url, class: 'navbar-brand' %>
+      <%= link_to image_tag('logo.png'), root_url, class: 'navbar-brand' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
           <div class="form-group">
             <%= text_field_tag :q, params[:q], { class: 'form-control', placeholder: 'Gear Search' } %>
           </div>
-          <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
+          <%= submit_tag "Search", name: nil, class: 'btn btn-primary' %>
         <% end %>
       <% end %>
       <ul class="nav navbar-nav pull-right">
